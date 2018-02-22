@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/Nefry-Community/TutorialBook.svg?style=svg)](https://circleci.com/gh/Nefry-Community/TutorialBook)
+
 https://github.com/TechBooster/ReVIEW-Template からフォークしました。
 
 # Re:VIEW Template
