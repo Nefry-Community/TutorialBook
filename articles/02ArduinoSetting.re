@@ -1,19 +1,7 @@
-
-
-+++
-author = "n0bisuke"
-author@<b>{username = "のびすけ"
-weight = 8
-slug = "nefrybt-arduino-ide-setup"
-title = "Nefry BT向けのArduino IDEセットアップ方法"
-title}eng = "Arduino IDE Setup guide for Nefry BT"
-description = "Nefry BTの開発をする際に行うArduino IDEのセットアップ方法を紹介します。"
-draft = false
-doctype = ["nefrybt"]
-date = "2017-07-25T01:02:41+09:00"
-+++
-
-
+= Nefry BT向けのArduino IDEセットアップ方法
+//comment{
+環境構築
+//}
 
 このページでは、Arduino IDEにNefry BTの開発環境をインストールする方法を紹介します。@<strong>{Arduino IDEでNefry BTの開発をする際に必須になる項目です。}
 
@@ -29,15 +17,14 @@ Arduino IDEのインストールは@<href>{/docs/arduinoide-setup/,こちらの�
 
 
 
-@<tt>{追加のボードマネージャのURL}のフォームに以下のURLを追加しましょう。
+@<tt>{追加のボードマネージャのURL}のフォームに次のURLを追加しましょう。
 
 
 //emlist{
 http://nefry.studio/package_nefrybt_index.json
 //}
 
-
-//image[97340ffab8e27b01fcaab1b4a1a7b0fd][]{
+//image[mac01][環境設定]{
 //}
 
 
@@ -53,7 +40,7 @@ http://nefry.studio/package_nefrybt_index.json
 
 
 
-//image[7aec4d50fe882e6faec6009492b03eea][]{
+//image[mac02][ボードマネージャーの開き方]{
 //}
 
 
@@ -62,8 +49,7 @@ http://nefry.studio/package_nefrybt_index.json
 するとこのようなボードマネージャダイアログが表示されます。
 
 
-
-//image[94270bbcce718a52061c544f39ea2c5e][]{
+//image[mac03][ボードマネージャー]{
 //}
 
 
@@ -75,7 +61,8 @@ http://nefry.studio/package_nefrybt_index.json
 
 
 
-//image[5232ee346a7232cdea75a96569333cc4][]{
+
+//image[mac04][ボードマネージャーにNefryと入力する]{
 //}
 
 
@@ -85,13 +72,10 @@ http://nefry.studio/package_nefrybt_index.json
 
 
 
-横のプルダウンメニューでバージョンを指定できますが、@<strong>{@<href>{/docs/nefrybt-library,Nefry BTのライブラリ\}を参考にバージョン選択}するようにしましょう。
+横のプルダウンメニューでバージョンを指定できますが、@<href>{/docs/nefrybt-library,Nefry BTのライブラリ} を参考にバージョン選択するようにしましょう。
 
-
-
-//image[29a35f129c73926c160c1e948369308d][]{
+//image[mac05][インストール]{
 //}
-
 
 
 
@@ -103,9 +87,7 @@ http://nefry.studio/package_nefrybt_index.json
 
 メニューの@<tt>{ツール} > @<tt>{ボード}を選択したときに@<tt>{Nefry BT}の項目が追加されていればOKです。
 
-
-
-//image[0b6439948f14c13edf7b5af4254a7ab5][]{
+//image[mac06][ボード選択]{
 //}
 
 
@@ -114,9 +96,9 @@ http://nefry.studio/package_nefrybt_index.json
 Nefry BT R2以降は@<href>{/docs/nefrybt-revision-check,Nefry BTのリビジョンのチェック}を参考にして、@<tt>{Nefry BT R2}を選択しましょう。
 
 
-
-//image[effa26bf4877f9821ad2678cd49083ae][]{
+//image[mac07][ボード選択詳細]{
 //}
+
 
 
 
@@ -126,4 +108,3 @@ Nefry BT R2以降は@<href>{/docs/nefrybt-revision-check,Nefry BTのリビジョ
 
 
 次は、はじめてのプログラム書き込みの例として@<href>{/docs/nefrybt-led/,Nefry BT付属のLEDでLチカ}を試してみてください。
-

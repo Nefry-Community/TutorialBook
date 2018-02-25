@@ -1,19 +1,5 @@
 
 
-+++
-author = "chantoku"
-author@<b>{username = "ちゃんとく"
-weight = 5
-slug = "nefrybt-wifi-setup"
-title = "Nefry BTのWi-Fiセットアップ"
-title}eng = "Wi-Fi Setup Guide for Nefry BT"
-description = "Nefry BTのWi-Fiセットアップについて説明します。"
-draft = false
-doctype = ["nefrybt"]
-date = "2017-07-26T01:02:41+09:00"
-+++
-
-
 
 Nefry BTの開発を始めるために、まずはWi-Fiセットアップを行いましょう！
 
@@ -58,4 +44,3 @@ Nefry BTのWi-Fiに接続すると自動で設定ページのウィンドウが�
 
 
 それではNefry BTとインターネットの世界を楽しみましょう！
-

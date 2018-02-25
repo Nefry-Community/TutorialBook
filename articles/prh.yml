@@ -8,6 +8,15 @@ imports:
   - ../prh-rules/media/techbooster.yml
 
 rules:
+  - expected: Nefry BT
+    pattern:  NefryBT
+    prh: Nefry BTと表記を統一します。
+  - expected: Nefry BT
+    pattern:  nefry
+    prh: Nefryと表記を統一します。
+  - expected: Nefry BT
+    pattern:  nefrybt
+    prh: NefryBTと表記を統一します。URLの場合は無視してください。
   - expected: asm.js
     pattern:  ams.js
   - expected: 本章
