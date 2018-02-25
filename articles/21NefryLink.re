@@ -1,18 +1,4 @@
-
-
-+++
-author = "n0bisuke"
-author@<b>{username = "のびすけ"
-weight = 2
-slug = "nefrybt-link"
-title = "Nefry BT関連リンク（情報の調べ方）"
-title}eng = "Nefry BT Links"
-description = "Nefry BTの関連リンクやユーザーさんが書いてくれた記事などを紹介します。"
-draft = false
-doctype = ["nefrybt"]
-date = "2017-08-08T01:02:41+09:00"
-+++
-
+= リンク集
 
 
 このページでは関連するリンクやユーザーさんが書いてくれた記事などを紹介します。
@@ -43,4 +29,3 @@ date = "2017-08-08T01:02:41+09:00"
 
  * @<href>{http://www.1ft-seabass.jp/memo/2017/08/06/nefrybt-firststep-memo/,Nefry BTが到着したので早速使ってみるメモ}  / 1ft-seabass
  * @<href>{http://codezine.jp/article/detail/10112,最新のWi-Fi＆Bluetooth搭載！ FRISKサイズのIoTデバイス「Nefry BT」をはじめてみよう} / CodeZine
-

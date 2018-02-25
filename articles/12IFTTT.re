@@ -1,21 +1,6 @@
+= IFTTTと連携しよう
 
-
-+++
-author = "chantoku"
-author@<b>{username = "ちゃんとく"
-weight = 7
-slug = "nefrybt-ifttt"
-title = "Nefry BTとIFTTTを連携する"
-title}eng = "connect with IFTTT"
-description = "Nefry BTとIFTTTを連携する仕組みを紹介します。"
-draft = false
-doctype = ["nefrybt"]
-date = "2017-07-26T01:02:41+09:00"
-+++
-
-
-
-Nefry BTにはデフォルトで、Nerfy BTのボタンを押すと連携したIFTTTにデータを送信するプログラムが書かれています。@<strong>{プログラミング不要でIFTTTの様々なウェブサービスと連携することができます。}
+Nefry BTにはデフォルトで、Nerfy BTのボタンを押すと連携したIFTTTにデータを送信するプログラムが書かれています。@<strong>{プログラミング不要でIFTTTのようなウェブサービスと連携することができます。}
 
 
 
@@ -26,7 +11,7 @@ Nefry BTにはデフォルトで、Nerfy BTのボタンを押すと連携したI
 
 
 <center>
-//image[ifttt_action2][]{
+//image[ifttt_action20][IFTTT公式ページ]{
 //}
 
 @<href>{https://ifttt.com/,IFTTT公式ページ}
@@ -34,7 +19,7 @@ Nefry BTにはデフォルトで、Nerfy BTのボタンを押すと連携したI
 
 
 
-IFTTTはLINE, Twitter, Slackを始めとした様々なWebサービス同士を簡単に連携できるサービスです。連携したものは「レシピ」と呼ばれ、自分で新しいレシピを作成することもできます。
+IFTTTはLINE, Twitter, Slackを始めとしたさまざまなWebサービス同士を簡単に連携できるサービスです。連携したものは「レシピ」と呼ばれ、自分で新しいレシピを作成することもできます。
 
 
 
@@ -59,21 +44,21 @@ IFTTTのレシピは「〇〇が起きたら△△する」というようにト
 
 
 @<href>{https://ifttt.com/create,IFTTTのレシピ作成ページ}から「@<strong>{+this}」部分をクリックし、トリガーの作成をします。
-//image[ifttt_trigger1][]{
+//image[ifttt_trigger1][トリガーを作成します]{
 //}
 
 
 
 
 「Webhooks」を検索しましょう。
-//image[ifttt_trigger2][]{
+//image[ifttt_trigger2][Webhooks追加]{
 //}
 
 
 
 
 任意のイベント名をつけます。後ほどNefry BTにも登録するので覚えておきましょう。
-//image[ifttt_trigger3][]{
+//image[ifttt_trigger3][イベント名指定]{
 //}
 
 
@@ -82,35 +67,35 @@ IFTTTのレシピは「〇〇が起きたら△△する」というようにト
 
 
 続いてアクションを作成します。「@<strong>{+that}」から進めましょう。
-//image[ifttt_action1][]{
+//image[ifttt_action1][アクション作成]{
 //}
 
 
 
 
 Nefry BTのボタンを押したら実行したいWebサービスを自由に選びます。今回はサンプルとしてTwitterを連携してみます。
-//image[ifttt_action2][]{
+//image[ifttt_action2][サービス選択]{
 //}
 
 
 
 
 起こしたいアクションを選びましょう。今回は「Post a tweet（Tweetする）」を選んでみます。
-//image[ifttt_action3][]{
+//image[ifttt_action3][Tweetするようにします]{
 //}
 
 
 
 
 Tweetする内容を入力し、「Create action」をクリックします。
-//image[ifttt_action4][]{
+//image[ifttt_action4][アクションを作成します]{
 //}
 
 
 
 
 新しいレシピができました！「Webhooksを受け取ったらTweetする」というレシピです。「Finish」で完了します。
-//image[ifttt_action5][]{
+//image[ifttt_action5][作成完了！]{
 //}
 
 （連携するWebサービスのアカウント情報は登録する必要があります。）
@@ -120,21 +105,21 @@ Tweetする内容を入力し、「Create action」をクリックします。
 
 
 Nefry BTとWebhooksと紐付けるための「Secret Key」を取得します。@<href>{https://ifttt.com/discover,IFTTTのTOPページ}からWebhooksを検索しましょう。
-//image[ifttt_discover1][]{
+//image[ifttt_discover1][検索]{
 //}
 
 
 
 
 Webhooksのページに移動します。（初回は認証画面が表示されるので「Connect」で開始しましょう。）右上の「Setting」に移動します。
-//image[ifttt_discover2][]{
+//image[ifttt_discover2][Webhooks選択]{
 //}
 
 
 
 
 「URL」の末尾に自身のSecret Keyが記載されているのでコピーしましょう！
-//image[ifttt_discover3][]{
+//image[ifttt_discover3][SecretKey取得]{
 //}
 
 
@@ -143,22 +128,21 @@ Webhooksのページに移動します。（初回は認証画面が表示され
 
 
 Nefry BTを起動し、IPに繋いで設定ページを開きます。（IPがわからない方は@<href>{/docs/nefrybt-wifi-setup/,Nefry BTのWi-Fiセットアップ}を参考にしてください。）「Data Store」に移動します。
-//image[ifttt_setup1][]{
+//image[ifttt_setup1][セットアップ]{
 //}
 
 
 
 
 先ほど取得したWebhooksの「Secret Key」と「Event Name」をそれぞれ入力し保存します。
-//image[ifttt_setup2][]{
+//image[ifttt_setup2][保存]{
 //}
 
 
 
 
 Nefry BTのボタンを押して試してみましょう！
-//image[nefry_ifttt][]{
+//image[nefry_ifttt][実行してみよう]{
 //}
 
 ボタンを押すとTweetする連携ができました！（IFTTTのサーバ状況により送信に時間がかかる場合があります。）
-

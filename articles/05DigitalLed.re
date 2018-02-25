@@ -1,27 +1,7 @@
 
-
-+++
-author = "n0bisuke"
-author@<b>{username = "のびすけ"
-weight = 10
-slug = "nefrybt-led-analog"
-title = "Nefry BTで通常のアナログLEDのLチカを試す"
-title}eng = "about Nefry BT"
-description = "Nefry BTの開発の最初のステップとしてLチカプログラムを動かしてみましょう。通常のアナログLEDを使います。"
-draft = false
-doctype = ["nefrybt"]
-date = "2017-08-22T01:02:41+09:00"
-+++
-
-
+= LEDでGPIO制御してみる
 
 このページではNefry BTでLEDを制御する方法を紹介します。
-
-
-
-//image[58d5ff01a0669eb82394d41af9afb214][]{
-//}
-
 
 
 
@@ -29,7 +9,7 @@ date = "2017-08-22T01:02:41+09:00"
 
 
 
-ちなみにNefryBTのピンでD0とD1がありますが、その二つのピンはディスプレイの制御(I2C通信)のために使用されているため正常に動作しないことがあります。（←Nefry BT R2で修正しました。）
+ちなみにNefry BTのピンでD0とD1がありますが、そのふたつのピンはディスプレイの制御（I2C通信）のために使用されているため正常に動作しないことがあります。（←Nefry BT R2で修正しました。）
 
 
 == アナログLED
@@ -51,7 +31,7 @@ Nefry BTのA1ピンソケットにカソード（+側、足の長い方）ピン
 == コード
 
 
-以下のコードでこのページ上部のようなLEDの点滅になります。
+次のコードでこのページ上部のようなLEDの点滅になります。
 
 
 //emlist{

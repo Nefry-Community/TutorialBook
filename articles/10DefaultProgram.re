@@ -1,19 +1,5 @@
 
-
-+++
-author = "n0bisuke"
-author@<b>{username = "のびすけ"
-weight = 6
-slug = "nefrybt-default"
-title = "Nefry BTのデフォルトプログラム（初期化）"
-title}eng = "about Nefry BT default program"
-description = "Nefry BTの出荷時に書き込まれているデフォルトプログラムです。"
-draft = false
-doctype = ["nefrybt"]
-date = "2018-01-04T01:02:41+09:00"
-+++
-
-
+= デフォルトプログラム
 
 このページではNefry BTにデフォルトで書き込まれているプログラムを紹介します。
 
@@ -23,11 +9,12 @@ Nefry BTを初期化したい場合にはこちらのプログラムを書き込
 
 
 
-デフォルトプログラムでは以下の二つの内容が行えます。
+デフォルトプログラムでは次のふたつの内容が行えます。
 
  * @<href>{/docs/nefrybt-ifttt/,ノンプログラミングでIFTTT連携}
  * @<href>{/docs/nefrybt-line-notify/,ノンプログラミングでLINE連携}
 
+もし前の手順でプログラムの書き換え等を行った場合は下のプログラムを書き込んでください。
 
 //emlist{
 #include <NefryIFTTT.h>
