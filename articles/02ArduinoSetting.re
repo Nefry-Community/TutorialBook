@@ -109,7 +109,7 @@ Nefry BTがお手元に届いたら、まずはバージョンを確認しまし
 
 
 
-ちなみに、@<href>{/docs/nefry/,Nefry v2}が存在するので区別するために、VersionではなくRivisionとしました。
+ちなみに、@<href>{/docs/nefry/,Nefry v2}が存在するので区別するために、VersionではなくRevisionとしました。
 
 
 
