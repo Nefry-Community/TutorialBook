@@ -6,8 +6,40 @@
 このページでは、Arduino IDEにNefry BTの開発環境をインストールする方法を紹介します。@<strong>{Arduino IDEでNefry BTの開発をする際に必須になる項目です。}
 
 
+== Arduino IDEのインストール
 
-Arduino IDEのインストールは@<href>{/docs/arduinoide-setup/,こちらのドキュメント}を参照してください。
+
+Arduinoのサイト（https://www.arduino.cc/en/Main/Software）から自身の環境に合わせたダウンロードリンクを選択します。
+
+
+
+//image[arduino_ide_download][ArduinoのサイトからIDEをダウンロード]{
+//}
+
+
+
+
+Windows用、macOS用、Linux用が用意されています。Linux用にはARM版もありますので、Raspberry Piなどにもインストール可能になっています。
+
+
+
+//image[arduino_ide_donation][Arduinoへの寄付]{
+//}
+
+
+
+
+ダウンロードリンクを選択すると、Arduinoへの寄付が求められます。無料でIDEは利用できますが、IDEへの感謝を示したい場合は寄付をしてみてはいかがでしょうか。もちろん寄付を行わなくてもソフトウェアのダウンロードは可能です。@<tt>{JUST DOWNLOAD}をクリックしてダウンロードを開始しましょう。インストーラーをダウンロードした場合は、ダウンロード完了後にインストーラーを起動してインストールを完了させます。macOS向けのダウンロードリンクを選択した場合は、Arduino IDEそのもののダウンロードが開始されるので、ダウンロードしたZIPファイルを解凍してアプリケーションフォルダに移動するだけでインストールが完了します。
+
+
+
+//image[arduino_ide_main][Arduino IDE メイン画面]{
+//}
+
+
+
+
+インストールが終わったら、Arduino IDEを起動してみましょう。スプラッシュ画面が表示された後に、このような画面が表示されるはずです。
 
 
 == ボードマネージャの追加
@@ -72,7 +104,20 @@ http://nefry.studio/package_nefrybt_index.json
 
 
 
-横のプルダウンメニューでバージョンを指定できますが、@<href>{/docs/nefrybt-library,Nefry BTのライブラリ} を参考にバージョン選択するようにしましょう。
+横のプルダウンメニューでバージョンを指定できます。
+
+
+
+Nefry BTのライブラリバージョンは、 メジャーバージョン、マイナーバージョン、パッチバージョンに分かれています。
+
+ * メジャーバージョン - 大きな変更
+ * マイナーバージョン - 機能追加などの更新
+ * パッチバージョン - バグ修正など
+
+
+
+例えば@<tt>{v1.2.3}の場合、最初の1がメジャーバージョン、次の2がマイナーバージョン、最後の3がパッチバージョンとしています。また、 LTS(安定)版と開発版を分けていて、マイナーバージョンが偶数か奇数かで分けています。LTSがv1.2系、開発版がv1.1系などとなります。その次はLTSが1.4系、開発版がv1.3系となり、以降も偶数と奇数でのアップデートとなります。更新についてはNefryのGitHubページ（https://github.com/Nefry-Community/arduino-esp32/）にあるリリースノートに記載がありますので、参考にしてみて下さい。
+
 
 //image[mac05][インストール]{
 //}
@@ -93,7 +138,7 @@ http://nefry.studio/package_nefrybt_index.json
 
 
 
-Nefry BT R2以降は@<href>{/docs/nefrybt-revision-check,Nefry BTのリビジョンのチェック}を参考にして、@<tt>{Nefry BT R2}を選択しましょう。
+Nefry BT R2以降は@<tt>{Nefry BT R2}を選択しましょう。
 
 
 //image[mac07][ボード選択詳細]{
@@ -109,11 +154,11 @@ Nefry BTがお手元に届いたら、まずはバージョンを確認しまし
 
 
 
-ちなみに、@<href>{/docs/nefry/,Nefry v2}が存在するので区別するために、VersionではなくRevisionとしました。
+ちなみに、Nefry v2（https://dotstud.io/shop/nefry-connect-internet/）というボードも存在するので区別するために、VersionではなくRevisionとしました。
 
 
 
-//image[device][Device]{
+//image[device][ボード背面]{
 //}
 
 
@@ -127,11 +172,7 @@ Nefry BTがお手元に届いたら、まずはバージョンを確認しまし
 
 
 
-基本的な使い方に代わりはないですが、 @<href>{/docs/nefrybt-arduino-ide-setup/,Arduino IDEでの書き込み}の際の指定の仕方が少し変わります。
-
-
-
-書き込み時のボード選択でR2の場合は@<tt>{Nefry BT R2}を選択し、無印の場合は@<tt>{Nefry BT}を選択して書き込みをして下さい。
+基本的な使い方に代わりはないですが、 書き込み時のボード選択でR2の場合は@<tt>{Nefry BT R2}を選択し、無印の場合は@<tt>{Nefry BT}を選択して書き込みをして下さい。
 
 
 
@@ -140,4 +181,4 @@ Nefry BTがお手元に届いたら、まずはバージョンを確認しまし
 
 
 
-次は、はじめてのプログラム書き込みの例として@<href>{/docs/nefrybt-led/,Nefry BT付属のLEDでLチカ}を試してみてください。
+次は、はじめてのプログラム書き込みの例としてNefry BT付属のLEDでLチカを試してみてください。
