@@ -11,6 +11,7 @@ CHAPS:
     - 03DefaultLed.re
     - 04DefaultSW.re
     - 05DigitalLed.re
+    - 06SerialPlotter.re
 
   - IoT体験編:
     - 10DefaultProgram.re
