@@ -1,6 +1,7 @@
 
 = LEDでGPIO制御してみる
 
+
 このページではNefry BTでLEDを制御する方法を紹介します。
 
 
@@ -34,7 +35,7 @@ Nefry BTのA1ピンソケットにカソード（+側、足の長い方）ピン
 次のコードでこのページ上部のようなLEDの点滅になります。
 
 
-//emlist{
+//emlist[][c]{
 #define LED_PIN A1
 #define DELAY_TIME 1000
 
