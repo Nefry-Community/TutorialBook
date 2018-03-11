@@ -80,24 +80,6 @@ void loop() {
 そのときに、 @<tt>{Nefry.setLed(255, 0, 0);} LEDが赤に光らせ、 @<tt>{Nefry.ndelay(1000);} で1秒続いたあと、 @<tt>{Nefry.setLed(0, 0, 255);} 青に戻します。
 
 
-== プログラムの保存とボードに書き込み
-
-
-//image[04DefaultSW_03][ボードに書き込み]{
-//}
-
-
-
-
-左上の  @<tt>{→} ボタンを押してボード（Nefry BT）にプログラムを書き込みます。
-
-
-
-//image[04DefaultSW_04][左上の → ボタン]{
-//}
-
-
-
 == 確認
 
 
@@ -105,7 +87,7 @@ void loop() {
 
 
 
-//image[04DefaultSW_05][起動したときの動き]{
+//image[04DefaultSW_03][起動したときの動き]{
 //}
 
 
@@ -115,7 +97,7 @@ void loop() {
 
 
 
-//image[04DefaultSW_06][スイッチを押してすぐ離したときの動き]{
+//image[04DefaultSW_04][スイッチを押してすぐ離したときの動き]{
 //}
 
 
