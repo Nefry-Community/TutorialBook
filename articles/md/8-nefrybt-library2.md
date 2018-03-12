@@ -1,4 +1,4 @@
-このページではNefry BTの便利なライブラリをご紹介します。
+このページではNefry BTの便利なライブラリの一部をご紹介します。
 
 ## Ambientライブラリ（NefryAmbient.h）
 Ambient（https://ambidata.io/）は、主にマイコンボードなどからのデータを無料で簡単に可視化できるサービスです。
