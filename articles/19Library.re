@@ -10,7 +10,7 @@ Ambient（https://ambidata.io/）は、主にマイコンボードなどから�
 
 
 
-//image[ambient_top][Ambientホームページ]{
+//image[ambient_top][Ambientのホームページ]{
 //}
 
 
@@ -121,7 +121,79 @@ void loop() {
 
 == ティスプレイ（Nefry_Display）
 
-== Fast Sensingライブラリ（Nefry_FastSensing）
+== Fastsensingライブラリ（Nefry_FastSensing）
+
+
+Fastsensing（https://fastsensing.com/ja/）は、専用のデバイスやマイコンボードからのセンサーデータを受信し、グラフ化や異常検知をしてくれるサービスです。
+
+
+
+//image[fastsensing_top][Fastsensingのホームページ]{
+//}
+
+
+
+
+通常は専用のデバイスからセンサーデータをアップロードするのですが、ファストセンシング・ディベロッパー・プログラム（https://fastsensing.com/ja/developer/）をつかって、さまざまなマイコンボードからデータをアップロードすることができます。
+
+
+
+//image[fastsensing_developer_program][ファストセンシング・ディベロッパー・プログラム]{
+//}
+
+
+
+
+ファストセンシング・ディベロッパー・プログラムのページ上の@<tt>{スタブデバイスの追加}のリンクから、Fastsensingのコンソールに遷移でき、仮想のデバイスを登録することができます。
+
+
+
+//image[fastsensing_add_stub_device][スタブデバイスの追加]{
+//}
+
+
+
+
+ここから@<tt>{スタブデバイス}を追加すると、1つのデバイスに対して3つの独立したチャネルが割り当てられて、それぞれのチャネルに対してセンサーデータをアップロードすることができます。
+
+
+
+//image[fastsensing_detail][スタブデバイスの詳細]{
+//}
+
+
+
+
+コンソール（https://console.fastsensing.com/devices）に登録した@<tt>{スタブデバイス}が表示されいるので、それを選択するとデバイスの詳細画面が表示されます。そこで、デバイスと各チャネルのトークンが表示されます。Nefry BTのFastsensingライブラリでは、これらのトークンをつかってセンサーデータをアップロードします。
+
+
+//emlist{
+#include <NefryFastSensing.h> // FastSensingライブラリを使うのに必要
+#define DEVICE_TOKEN xxxx // デバイスのトークン
+#define CHANNEL1_TOKEN xxxx // チャネル1のトークン
+#define CHANNEL2_TOKEN xxxx // チャネル2のトークン
+#define CHANNEL3_TOKEN xxxx // チャネル3のトークン
+
+
+NefryFastSensing fastSensing; // Fastsensingと通信するために必要なインスタンス
+float floatData = 0;
+float intData = 0;
+
+void setup() {
+  fastSensing.begin(DEVICE_TOKEN, CHANNEL1_TOKEN, CHANNEL2_TOKEN, CHANNEL3_TOKEN);
+}
+
+void loop() {
+  fastSensing.setValue(0, floatData); // Fastsensingに送るデータをセットします
+  fastSensing.setValue(1, intData); // 一つ目の引数はチャネル（0〜2）を指定しています
+
+  fastSensing.push(); // セットしたデータをFastsensingに送信します
+
+  floatData += 0.1;
+  intData++;
+  delay(10000);
+}
+//}
 
 == Firebaseライブラリ（Nefry_FireBase）
 
