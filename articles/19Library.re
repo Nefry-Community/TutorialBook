@@ -250,8 +250,71 @@ void loop() {
 TODO:最新のコードを使う
 
 
-== ティスプレイ（Nefry_Display）
-
 == Firebaseライブラリ（Nefry_FireBase）
+
+
+Firebase（https://firebase.google.com/?hl=ja）は、モバイルとウェブアプリケーションの開発プラットフォームです。その中でもNefry BTのFirebaseライブラリでは、リアルタイムデータベースへの読み書きを可能にします。
+
+
+
+//image[firebase_top][Firebaseのホームページ]{
+//}
+
+
+
+
+Firebaseのページ上でリアルタイムデータベースを作成すると、ホスト名が割り振られます。Firebaseライブラリではこのホストにアクセスします。
+
+
+
+//image[firebase_database_host][Firebaseのデータベースのホスト名]{
+//}
+
+
+
+
+リアルタイムデータベースへアクセスするのに必要なシークレットは、プロジェクトの設定＞サービスアカウント＞データベースのシークレットで確認ができます。
+
+
+
+//image[firebase_database_secret][Firebaseのデータベースのシークレット]{
+//}
+
+
+
+
+これらの情報を使って、Nefry BTからFirebaseへアクセスします。A0ピンのアナログ値をリアルタイムデータベースにアップロードするプログラムの例は以下のとおりです。
+
+
+//emlist{
+#include<NefryFireBase.h> // Firebaseライブラリを使うのに必要
+#define HOST xxxxx // Firebaseで作成したデータベースのホスト名
+#define SECRET xxxxx // データベースへアクセスするためのシークレット
+
+NefryFireBase firebase; // Firebaseと通信するために必要なインスタンス
+
+void setup() {
+  firebase.begin(HOST, SECRET); // Firebaseとの接続を初期化
+}
+
+void loop() {
+  DataElement elem = DataElement();
+  elem.setValue("A0", analogRead(A0)); // "A0"というキーで、A0ピンのアナログ値をセット
+  firebase.write("Nefry", &elem); // セットした値を"Nefry"というグループに追加
+  delay(1000);
+}
+//}
+
+
+このコードを実行すると、リアルタイムデータベース上には以下のような情報が保存されます。
+
+
+
+//image[firebase_database_result][Firebaseのデータベースにデータを送信した例]{
+//}
+
+
+
+== ティスプレイ（Nefry_Display）
 
 == Firmataライブラリ（Nefry_Firmata）
