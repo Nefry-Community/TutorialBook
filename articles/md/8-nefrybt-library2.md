@@ -96,7 +96,6 @@ void loop() {
 接続文字列は、IoT Hub内のデバイスエクスプローラーを開き、登録したデバイスを選択すると上のような画面が表示され確認することができます。登録したデバイスごとに接続文字列が異なるので注意が必要です。
 
 
-## ティスプレイ（Nefry_Display）
 
 ## Fastsensingライブラリ（Nefry_FastSensing）
 Fastsensing（https://fastsensing.com/ja/）は、専用のデバイスやマイコンボードからのセンサーデータを受信し、グラフ化や異常検知をしてくれるサービスです。
@@ -155,8 +154,49 @@ void loop() {
 ```
 
 
+## ThingSpeakライブラリ（Nefry_ThingSpeak）
+ThingSpeak（https://thingspeak.com/）は、マイコンなどからのセンサーデータを収取し、グラフ化やMATLABを使って分析を行えるだけでなく、Twitterなどの別のサービスへのアクションを行えるサービスです。
 
 
+![ThingSpeakのホームページ](thingspeak_top)
+
+
+ThingSpeakにセンサーデータをアップロードするには、まずチャネルを作成する必要があります。
+
+
+![ThingSpeakのチャネル設定](thingspeak_channel_detail)
+
+
+チャネルを作るとフィールドの設定ができ、1つのチャネルにつき最大8つのフィールドを持つことができ、それぞれのフィールドに別々のデータをアップロードすることができます。
+
+
+![ThingSpeakのAPIキー](thingspeak_detail)
+
+
+Nefry BTからThingSpeakにデータをアップロードする際は、チャネルのIDとライトAPIキーが必要となります。同じチャネルのフィールドであれば、同じライトキーを使うことになります。
+
+
+```
+#include <NefryThingSpeak.h>
+
+void setup() {
+  //ThingSpeakの初期設定を行います。WriteKeyも設定します
+  NefryThingSpeak.begin();
+  NefryThingSpeak.setWriteAPIKey(1);
+}
+
+void loop() {
+  // ThingSpeakにデータを送信します。
+  // ThingSpeak.writeField( Field番号,データ);
+  NefryThingSpeak.writeField(1, random(1000));//データを送信します
+  delay(20000); // ThingSpeakには15秒間隔でデータを送信すること
+}
+```
+
+TODO:最新のコードを使う
+
+
+## ティスプレイ（Nefry_Display）
 
 ## Firebaseライブラリ（Nefry_FireBase）
 
