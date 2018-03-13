@@ -1,82 +1,109 @@
-## TEST
+## シリアルモニタ・シリアルプロッタを使って Nefry BT の動作を見てみよう
 
-* sample
-* sample
-* sample
+この章ではArduino IDE のシリアルモニタ・シリアルプロッタという機能を使って、Nefry BT の中で起こっていることを表示する仕組みを説明します。
 
-![image](test.jpg)
+## シリアルモニタ・シリアルプロッタとは
 
-```js
-function(){
-    
-    
-    
-    
-    
-    
-}
-```
+シリアルモニタ・シリアルプロッタのシリアルというのはシリアル通信のことです。シリアル通信は Nefry BTとコンピュータと通信するために使われる通信方法です。文字列や数字など様々なデータを送ることが可能です。
+
+![シリアル通信の流れ](06SerialPlotter_01.png)
+
+たとえば、 このようにNefry BTからコンピュータに数字の10をシリアル通信で送る場合、 ```Serial.println(10);``` を書きます。これを受け取ったコンピュータ側は、USB経由のシリアル通信を行い、数字の10を受け取ります。
+
+前半の ```Serial``` の部分はシリアル通信をするクラス（この場合、シリアル通信するプログラムが集まったもの）で、そこから、改行付きでデータを送るのが ```println``` です。今回は10という数字を送るので ```println(10)``` となります。
+
+![シリアルモニタの例](06SerialPlotter_02.png)
+
+シリアルモニタは、シリアル通信のデータをポート単位で待ち構えて、データが来るとデータの内容をテキストで表示します。とりあえず、Nefry BTで自分のプラグラムの何かしら挙動をつかみたい時は、とりあえずシリアル通信で該当のデータを出力しておくと、データの流れが把握しやすいでしょう。
+
+![シリアルプロッタの例](06SerialPlotter_03.png)
+
+シリアルプロッタは、シリアル通信のデータをポート単位で待ち構えて、できる限り数字に置き換えて折れ線グラフで表示します。シリアルモニタと比べてデータの変化を把握しやすいツールです。
+
+## Nefry BT の準備
+
+Nefry BT の準備です。USBを差し込み、[Arduino設定](02ArduinoSetting) を参考にして差し込まれたポートをチェックして、シリアルモニタ・シリアルプロッタがNefry BTからくるデータを待ち構えられるようにしておきましょう。
+
+![差し込まれたポートをチェック](06SerialPlotter_04.png)
+
+## プログラムの書き込み
+
+今回のプログラムの書き込みます。
+
+![今回のプログラム](06SerialPlotter_05.png)
+
+このコードは https://github.com/Nefry-Community/TutorialExample/tree/master/examples にある、 06SerialPlotter のサンプルからコピー＆ペーストすることが可能です。
+
+## コードの説明
 
 ```c
+#include <Nefry.h>
 
-#include <M5Stack.h>
-
-// the setup routine runs once when M5Stack starts up
 void setup() {
-  
-  // initialize the M5Stack object
-  M5.begin();
-  M5.Lcd.drawBitmap(0, 0, 320, 240, (uint16_t *)gImage_logoM5);
-  delay(500);
-
-  // Lcd display
-  M5.Lcd.fillScreen(WHITE);
-  delay(500);
-  M5.Lcd.fillScreen(RED);
-  delay(500);
-  M5.Lcd.fillScreen(GREEN);
-  delay(500);
-  M5.Lcd.fillScreen(BLUE);
-  delay(500);
-  M5.Lcd.fillScreen(BLACK);
-  delay(500);
-
-  // text print
-  M5.Lcd.fillScreen(BLACK);
-  M5.Lcd.setCursor(10, 10);
-  M5.Lcd.setTextColor(WHITE);
-  M5.Lcd.setTextSize(1);
-  M5.Lcd.printf("Display Test!");
-
-  // draw graphic
-  delay(1000);
-  M5.Lcd.drawRect(100, 100, 50, 50, BLUE);
-  delay(1000);
-  M5.Lcd.fillRect(100, 100, 50, 50, BLUE);
-  delay(1000);
-  M5.Lcd.drawCircle(100, 100, 50, RED);
-  delay(1000);
-  M5.Lcd.fillCircle(100, 100, 50, RED);
-  delay(1000);
-  M5.Lcd.drawTriangle(30, 30, 180, 100, 80, 150, YELLOW);
-  delay(1000);
-  M5.Lcd.fillTriangle(30, 30, 180, 100, 80, 150, YELLOW);
-
-  // Set the wakeup button
-  M5.setWakeupButton(BUTTON_A_PIN);
+  // SW有効化
+  Nefry.enableSW();
+  // LEDが白に光る（起動時の光り方）
+  Nefry.setLed(255, 255, 255);
 }
-
-// the loop routine runs over and over again forever
-void loop(){
-
-  //rand draw 
-  M5.Lcd.fillTriangle(random(M5.Lcd.width()-1), random(M5.Lcd.height()-1), random(M5.Lcd.width()-1), random(M5.Lcd.height()-1), random(M5.Lcd.width()-1), random(M5.Lcd.height()-1), random(0xfffe));
-
-  if(M5.BtnA.wasPressed()) {
-    M5.powerOFF();
-  }
-  
-  M5.update();
-}
-
 ```
+
+```#include <Nefry.h>``` は、いままでのとおり、Nefryライブラリの準備です。SW有効化、起動時に白く光るように設定しています。
+
+```c
+void loop() {
+  // SWを押した時を判定する Nefry.readSW
+  if (Nefry.readSW()) {
+    // LEDが赤に光る
+    Nefry.setLed(255, 0, 0);
+    // ボタンを押した時は1という値を知らせる
+    Serial.println(10);
+    // 押されたら1秒待つ
+    Nefry.ndelay(1000);
+    // 青に戻る
+    Nefry.setLed(0, 0, 255);
+    // ボタンを離したら0という値を知らせる
+    // Serial.println(0);
+  }
+```
+
+繰り返し動作するloop部分では、 [デフォルトのフルカラーLED](04DefaultLed) の処理に加えて、今回はSWを押した時に ```Serial.println(10);``` PCに対してシリアル通信で10という数字を送っています。
+
+```c
+  // 通常時は0を知らせ続ける
+  Serial.println(0);
+}
+```
+
+また、SWを押していないときは、0を送り続けています。
+
+これを書き込んでNefryの動作は準備完了です。
+
+## シリアルモニタ
+
+まず、シリアルモニタを動かしてみましょう
+
+![ツールからシリアルモニタを選択する](06SerialPlotter_06.png)
+
+メニュー から ```ツール``` > ```シリアルモニタ``` をクリックします。
+
+![なにも動かしていないときのシリアルモニタ](06SerialPlotter_07.png)
+
+シリアルモニタが表示されます。なにも動かしていないときは0が送られ続けています。
+
+![ボタンを押したときのシリアルモニタ](06SerialPlotter_08.png)
+
+ボタンを押してみると 10 の値が流れてきます。
+
+## シリアルプロッタ
+
+続いて、シリアルプロッタを動かしてみましょう
+
+![ツールからシリアルプロッタを選択する](06SerialPlotter_09.png)
+
+メニュー から ```ツール``` > ```シリアルプロッタ``` をクリックします。
+
+![ボタンを押したときのシリアルプロッタ](06SerialPlotter_10.png)
+
+ボタンを押してみると 10 の値が流れてきてグラフが反応します。
+
+お疲れ様でした。
