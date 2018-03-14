@@ -257,25 +257,29 @@ Nefry BTからThingSpeakにデータをアップロードする際は、チャ�
 
 
 //emlist{
+// ThingSpeakライブラリを使うのに必要
 #include <NefryThingSpeak.h>
+
+// ThingSpeakで作成したチャネルのID（数値）とライトキー
+#define CHANNEL_ID 447668
+#define WRITE_KEY "1AQGOCTGWAJGVFQN"
 
 void setup() {
   //ThingSpeakの初期設定を行います。WriteKeyも設定します
-  NefryThingSpeak.begin();
-  NefryThingSpeak.setWriteAPIKey(1);
+  NefryThingSpeak.begin(CHANNEL_ID);
+  NefryThingSpeak.setWriteAPIKey(WRITE_KEY);
+  Nefry.println("ThingSpeak initialized");
 }
 
 void loop() {
-  // ThingSpeakにデータを送信します。
-  // ThingSpeak.writeField( Field番号,データ);
-  NefryThingSpeak.writeField(1, random(1000));//データを送信します
-  delay(20000); // ThingSpeakには15秒間隔でデータを送信すること
+  // A0ピンのアナログ値を読み取って、ThingSpeakに送信
+  // 第一引数はセットしたいフィールド（1〜8）です。
+  NefryThingSpeak.writeField(1, analogRead(A0));
+  Nefry.println("Data pushed");
+
+  delay(20000);
 }
 //}
-
-
-TODO:最新のコードを使う
-
 
 == Firebaseライブラリ（NefryFireBase.h）
 
