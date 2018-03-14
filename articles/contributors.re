@@ -12,7 +12,7 @@ Nefryのハードウエア＆ソフトウエアの開発者です。
 Webの人。電気風呂での失敗が転じて初心者に優しい電子工作を広める道へ。はんだづけが好き。
 
 
-==== @<chap>{02ArduinoSetting} @<chap>{19Library} @<chap>{20Tips} ぽきお / @pokiiio
+==== @<chap>{02ArduinoSetting} @<chap>{19Library} @<chap>{20Tips} ポキオ / @pokiiio
 
 Androidエンジニアだけどマイコンボードが大好き。Nefry BTを使った電車遅延チェックガジェットを作るハンズオンイベントを開催。
 
