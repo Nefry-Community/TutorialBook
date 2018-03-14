@@ -1,6 +1,8 @@
 
+= Nefryライブラリ紹介
 
-このページではNefry BTの便利なライブラリの一部をご紹介します。
+
+この章ではNefry BTの便利なライブラリの一部をご紹介します。
 
 
 == Ambientライブラリ（NefryAmbient.h）
@@ -20,22 +22,30 @@ Ambientライブラリは、@<tt>{NefryAmbient.h}をincludeすることで使え
 
 
 //emlist{
-#include <NefryAmbient.h> // Ambientライブラリを使うのに必要
+// Ambientライブラリを使うのに必要
+#include <NefryAmbient.h>
 
-#define CHANNEL_ID xxxx // データを送りたいAmbientのチャネルのID（数値）
-#define WRITE_KEY "yyyy" // そのチャネルのリードキー（文字列）
+// データを送りたいAmbientのチャネルのID（数値）とライトキー
+#define CHANNEL_ID xxxxx
+#define WRITE_KEY "xxxxx"
+
+// Ambientと通信するために必要なインスタンス
 NefryAmbient nefryAmbient;
 
 void setup() {
-  nefryAmbient.begin(CHANNEL_ID, WRITE_KEY); //Ambientを使えるように初期設定をする
+  //Ambientを使えるように初期設定をする
+  nefryAmbient.begin(CHANNEL_ID, WRITE_KEY);
+  Nefry.println("Ambient initialized");
 }
 
 void loop() {
-  int analog;
-  analog = analogRead(A0);//A0ピンの状態を取得します。
-  Nefry.print("Analog:"); Nefry.println(analog); //アナログの値を表示する
-  nefryAmbient.set(1, analog); //field,dataの順にセットします。
-  nefryAmbient.send();//Ambientにデータを送信します。
+  // A0ピンの値をセットします。第一引数はセットしたいフィールド（1〜8）です。
+  nefryAmbient.set(1, analogRead(A0));
+
+  //Ambientにデータを送信します。
+  nefryAmbient.send();
+  Nefry.println("Data pushed");
+
   Nefry.ndelay(1000);//1秒待つ
 }
 //}
@@ -54,7 +64,7 @@ void loop() {
 上記の関数で必要になる、チャネルIDとライトキーは「Myチャネル」から確認できます。
 
 
-== Microsoft Azure IoT Hubライブラリ（Nefry_AzureIoTHub）
+== Microsoft Azure IoT Hubライブラリ（NefryAzureIoTHub.h）
 
 
 IoT Hub（https://azure.microsoft.com/ja-jp/services/iot-hub/）とは、Microsoft Azureで提供されているIoT向けのバックエンドサービスのことです。
@@ -67,21 +77,26 @@ IoT Hub（https://azure.microsoft.com/ja-jp/services/iot-hub/）とは、Microso
 
 
 
-Nefry BTでは、@<tt>{NefryAzureIoTHub.h}をincludeすることで、データをIoT Hubにアップロードできます。
+Nefry BTでは、@<tt>{NefryAzureIoTHub.h}をincludeすることで、データをIoT Hubにアップロードできます。A0ピンのアナログ入力値を読み取りIoT Hubにアップロードするにはこのようにコーディングします。
 
 
 //emlist{
-#include <NefryAzureIoTHub.h> // Microsoft Azure IoT Hubライブラリを使うのに必要
-#include <Nefry.h>
+// Microsoft Azure IoT Hubライブラリを使うのに必要
+#include <NefryAzureIoTHub.h>
 
-#define CONNECTION_STRING "HostName=pokiiio.azure-devices.net;DeviceId=pokiiio-nefry;SharedAccessKey=xxxxxx" // 接続文字列
+// 接続文字列
+#define CONNECTION_STRING "xxxxx"
 
 void setup() {
-  while(!Azure.begin(CONNECTION_STRING)){ // 接続文字列を使ってIoT Hubとの接続を初期化する
-    Nefry.println("Azure begin Fault");
+  // 接続文字列を使ってIoT Hubとの接続を初期化する
+  while (!Azure.begin(CONNECTION_STRING)) {
+    Nefry.println("Azure begin Failed");
     delay(1000);
   }
-  Azure.setCallback(azureCallback); // IoT Hubからのメッセージを受信する関数を指定する
+  Nefry.println("Azure initialized");
+
+  // IoT Hubからのメッセージを受信する関数を指定する
+  Azure.setCallback(azureCallback);
 }
 
 void azureCallback(String s) {
@@ -92,11 +107,16 @@ void azureCallback(String s) {
 
 void loop() {
   if (WiFi.status() == WL_CONNECTED) {
-    Azure.connect(); // IoT Hubに接続する
-    DataElement a = DataElement();
-    a.setValue("EspAnalog", analogRead(A0)); // A0ピンのアナログ値を読み取る
-    Azure.push(&a); // そのデータをIoT Hubに送信する
-    Nefry.println("pushed");
+    // IoT Hubに接続する
+    Azure.connect();
+
+    // A0ピンのアナログ値を読み取ってDataElementインスタンスに格納する
+    DataElement dataElement = DataElement();
+    dataElement.setValue("Nefry", analogRead(A0));
+
+    // そのデータをIoT Hubに送信する
+    Azure.push(&dataElement);
+    Nefry.println("Data pushed");
     delay(2000);
   } else {
     Nefry.println("Not connected to the Internet");
@@ -119,7 +139,7 @@ void loop() {
 接続文字列は、IoT Hub内のデバイスエクスプローラーを開き、登録したデバイスを選択すると上のような画面が表示され確認することができます。登録したデバイスごとに接続文字列が異なるので注意が必要です。
 
 
-== Fastsensingライブラリ（Nefry_FastSensing）
+== Fastsensingライブラリ（NefryFastSensing.h）
 
 
 Fastsensing（https://fastsensing.com/ja/）は、専用のデバイスやマイコンボードからのセンサーデータを受信し、グラフ化や異常検知をしてくれるサービスです。
@@ -165,35 +185,42 @@ Fastsensing（https://fastsensing.com/ja/）は、専用のデバイスやマイ
 コンソール（https://console.fastsensing.com/devices）に登録した@<tt>{スタブデバイス}が表示されいるので、それを選択するとデバイスの詳細画面が表示されます。そこで、デバイスと各チャネルのトークンが表示されます。Nefry BTのFastsensingライブラリでは、これらのトークンをつかってセンサーデータをアップロードします。
 
 
+
+A0ピンのアナログ入力値を読み取りアップロードしてみましょう。
+
+
 //emlist{
-#include <NefryFastSensing.h> // FastSensingライブラリを使うのに必要
-#define DEVICE_TOKEN xxxx // デバイスのトークン
-#define CHANNEL1_TOKEN xxxx // チャネル1のトークン
-#define CHANNEL2_TOKEN xxxx // チャネル2のトークン
-#define CHANNEL3_TOKEN xxxx // チャネル3のトークン
+// FastSensingライブラリを使うのに必要
+#include <NefryFastSensing.h>
 
+// デバイスのトークンとチャネル1〜3のトークン
+#define DEVICE_TOKEN "xxxxx"
+#define CHANNEL1_TOKEN "xxxxx"
+#define CHANNEL2_TOKEN "xxxxx"
+#define CHANNEL3_TOKEN "xxxxx"
 
-NefryFastSensing fastSensing; // Fastsensingと通信するために必要なインスタンス
-float floatData = 0;
-float intData = 0;
+// Fastsensingと通信するために必要なインスタンス
+NefryFastSensing fastSensing;
 
 void setup() {
+  // トークンを使って初期化
   fastSensing.begin(DEVICE_TOKEN, CHANNEL1_TOKEN, CHANNEL2_TOKEN, CHANNEL3_TOKEN);
+  Nefry.println("FastSensing initialized");
 }
 
 void loop() {
-  fastSensing.setValue(0, floatData); // Fastsensingに送るデータをセットします
-  fastSensing.setValue(1, intData); // 一つ目の引数はチャネル（0〜2）を指定しています
+  // A0ピンの値をセットします。一つ目の引数はチャネル（0〜2）を指定しています。
+  fastSensing.setValue(0, analogRead(A0));
 
-  fastSensing.push(); // セットしたデータをFastsensingに送信します
+  // セットしたデータをFastsensingに送信します
+  fastSensing.push();
+  Nefry.println("Data pushed");
 
-  floatData += 0.1;
-  intData++;
   delay(10000);
 }
 //}
 
-== ThingSpeakライブラリ（Nefry_ThingSpeak）
+== ThingSpeakライブラリ（NefryThingSpeak.h）
 
 
 ThingSpeak（https://thingspeak.com/）は、マイコンなどからのセンサーデータを収取し、グラフ化やMATLABを使って分析を行えるだけでなく、Twitterなどの別のサービスへのアクションを行えるサービスです。
@@ -250,7 +277,7 @@ void loop() {
 TODO:最新のコードを使う
 
 
-== Firebaseライブラリ（Nefry_FireBase）
+== Firebaseライブラリ（NefryFireBase.h）
 
 
 Firebase（https://firebase.google.com/?hl=ja）は、モバイルとウェブアプリケーションの開発プラットフォームです。その中でもNefry BTのFirebaseライブラリでは、リアルタイムデータベースへの読み書きを可能にします。
@@ -287,20 +314,31 @@ Firebaseのページ上でリアルタイムデータベースを作成すると
 
 
 //emlist{
-#include<NefryFireBase.h> // Firebaseライブラリを使うのに必要
-#define HOST xxxxx // Firebaseで作成したデータベースのホスト名
-#define SECRET xxxxx // データベースへアクセスするためのシークレット
+// Firebaseライブラリを使うのに必要
+#include<NefryFireBase.h>
 
-NefryFireBase firebase; // Firebaseと通信するために必要なインスタンス
+// Firebaseで作成したデータベースのホスト名とアクセスするためのシークレット
+#define HOST "xxxxx"
+#define SECRET "xxxxx"
+
+// Firebaseと通信するために必要なインスタンス
+NefryFireBase firebase;
 
 void setup() {
-  firebase.begin(HOST, SECRET); // Firebaseとの接続を初期化
+  // Firebaseとの接続を初期化
+  firebase.begin(HOST, SECRET);
+  Nefry.println("Firebase initialized");
 }
 
 void loop() {
-  DataElement elem = DataElement();
-  elem.setValue("A0", analogRead(A0)); // "A0"というキーで、A0ピンのアナログ値をセット
-  firebase.write("Nefry", &elem); // セットした値を"Nefry"というグループに追加
+  // A0ピンのアナログ値を読み取って、DataElementインスタンスに"A0"というキーで格納する
+  DataElement dataElement = DataElement();
+  dataElement.setValue("A0", analogRead(A0));
+
+  // セットした値を"Nefry"というグループに追加
+  firebase.write("Nefry", &dataElement);
+  Nefry.println("Data pushed");
+
   delay(1000);
 }
 //}

@@ -1,4 +1,6 @@
-このページではNefry BTの便利なライブラリの一部をご紹介します。
+# Nefryライブラリ紹介
+
+この章ではNefry BTの便利なライブラリの一部をご紹介します。
 
 ## Ambientライブラリ（NefryAmbient.h）
 Ambient（https://ambidata.io/）は、主にマイコンボードなどからのデータを無料で簡単に可視化できるサービスです。
@@ -56,7 +58,7 @@ IoT Hub（https://azure.microsoft.com/ja-jp/services/iot-hub/）とは、Microso
 ![Microsoft Azure IoT Hubホームページ](azureiothub_top)
 
 
-Nefry BTでは、`NefryAzureIoTHub.h`をincludeすることで、データをIoT Hubにアップロードできます。
+Nefry BTでは、`NefryAzureIoTHub.h`をincludeすることで、データをIoT Hubにアップロードできます。A0ピンのアナログ入力値を読み取りIoT Hubにアップロードするにはこのようにコーディングします。
 
 
 ```
@@ -143,6 +145,9 @@ Fastsensing（https://fastsensing.com/ja/）は、専用のデバイスやマイ
 コンソール（https://console.fastsensing.com/devices）に登録した`スタブデバイス`が表示されいるので、それを選択するとデバイスの詳細画面が表示されます。そこで、デバイスと各チャネルのトークンが表示されます。Nefry BTのFastsensingライブラリでは、これらのトークンをつかってセンサーデータをアップロードします。
 
 
+A0ピンのアナログ入力値を読み取りアップロードしてみましょう。
+
+
 ```
 // FastSensingライブラリを使うのに必要
 #include <NefryFastSensing.h>
@@ -173,6 +178,8 @@ void loop() {
   delay(10000);
 }
 ```
+
+
 
 
 ## ThingSpeakライブラリ（NefryThingSpeak.h）
