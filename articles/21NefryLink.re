@@ -26,10 +26,6 @@ Nefry BTを購入できるサイトや店舗を紹介します。（2018年3月�
   * @<href>{http://eleshop.jp/shop/g/gI1J121/,共立電子産業株式会社 Nefry BT 購入ページ}　（店頭取扱あり）
   * @<href>{http://wakamatsu.co.jp/biz/products/detail.php?product_id=38320041,株式会社若松通商 Nefry BT 購入ページ}（店頭取扱あり）
 
-//comment{
-若松通商さんの店舗取扱があるか確認する
-//}
-
 == Nefryの作例情報
 
 Nefryを活用した例がご覧になれます。参考にして自分でも作ってみませんか？
