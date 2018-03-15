@@ -1,44 +1,35 @@
-+++
-author = "n0bisuke"
-author_username = "のびすけ"
-weight = 9
-slug = "nefrybt-library"
-title = "Nefry BTのライブラリ"
-title_eng = "about Nefry BT Library"
-description = "Nefry BTの始め方です。"
-draft = false
-doctype = ["nefrybt"]
-date = "2018-01-10T01:02:41+09:00"
-+++
+# Tips
 
-このページではNefry BTのArduino IDE向けライブラリのバージョン情報などを紹介します。
+この章では、Nefry BTに関するTipsを幾つか挙げてみます。
 
-## 本体（コア）のリポジトリ
 
-コアのソースコードは[こちらのGitHubリポジトリ](https://github.com/Nefry-Community/arduino-esp32/)で管理されています。
+## Nefry BTについて
 
+### Nefry BTを初期状態に戻したい
+
+こちらのデフォルトプログラム（https://dotstud.io/docs/nefrybt-default/）を書き込んで下さい。
+
+
+### PCがNefry BTを認識できない
+
+Nefry BTのUSBシリアル変換チップ（FTDI）のドライバーがPCにインストールされていない場合は、FTDIのページ（http://www.ftdichip.com/Drivers/VCP.htm）からドライバーをダウンロードしてインストールしてみて下さい。
+
+それでもNefry BTを認識できなかったり、何らかの理由でPCに接続できない場合は、Nefry BTのWebコンソールからプログラムを書き込んだり、シリアルモニタを確認できたりしますので、そちらもご利用下さい。
+
+
+### 困ったときは
+
+Facebookのコミュニティ「Nefryユーザーグループ」（https://www.facebook.com/groups/nefry/）に参加して、質問をしてみましょう。
+
+
+## 開発に関して
+
+### 本体（コア）のリポジトリ
+
+コアのソースコードはGitHubリポジトリ（https://github.com/Nefry-Community/arduino-esp32/）で管理されています。
 プルリクエストやIssueの追加などはどなたでも行えますので是非投稿して下さい。
 
-## バージョンについて (2018/1/10更新)
+### コアへのコミット
 
-Nefry BTのライブラリバージョンは、 **メジャーバージョン、マイナーバージョン、パッチバージョン**に分かれています。
-
-* メジャーバージョン - 大きな変更
-* マイナーバージョン - 機能追加などの更新
-* パッチバージョン - バグ修正など
-
-例えばv1.2.3の場合、最初の1がメジャーバージョン、次の2がマイナーバージョン、最後の3がパッチバージョンとしています。
-
-また、 **LTS(安定)版と開発版を分けていて、マイナーバージョンが偶数か奇数かで分けています。**
-
-**LTSがv1.2系、開発版がv1.1系**などとなります。その次はLTSが1.4系、開発版がv1.3系となり、以降も偶数と奇数でのアップデートとなります。 (2018/1/10時点ではまだ予定)
-
-更新については[リリースノート](https://github.com/Nefry-Community/arduino-esp32/blob/master/release%20note.md)を参照して下さい。
-
-
-
-## コアへのコミット
-
-[Gitter](https://gitter.im/Nefry-Community/)でディスカッションが行われています。
-
+Gitter（https://gitter.im/Nefry-Community/）でディスカッションが行われています。
 興味のある方はジョインしてみましょう！
