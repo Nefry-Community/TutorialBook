@@ -19,7 +19,7 @@
 銀色の袋に入ったNefryを出しましょう。Nefryを触るときには静電気や水が掛からないように注意してください。
 
 袋から出したNefryにはあらかじめプログラムが書いてありますので、NefryをUSBに差せばさっそく動かすことができます。
-そのプログラムについての解説は、@<chap>{10NefryDefaultProgram}で行います。
+そのプログラムについての解説は、@<chap>{10DefaultProgram}で行います。
 
 //image[package2][Nefry BTパッケージ内容]{
 //}
