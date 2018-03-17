@@ -20,14 +20,18 @@
 Nefry BTを購入できるサイトや店舗を紹介します。（2018年3月現在）
 
   * @<href>{https://dotstud.io/shop/nefry-bt-single/,dotstudio株式会社 Nefry BT 購入ページ}
-  * @<href>{https://dotstud.io/shop/nefry-bt-display/,dotstudio株式会社 Nefry BT用ディスプレイ購入ページ}
   * @<href>{https://sengoku.co.jp/mod/sgk_cart/detail.php?code=EEHD-55W8,株式会社千石電商 Nefry BT 購入ページ}　（店頭取扱あり）
   * @<href>{https://shop.tsukumo.co.jp/goods/4589490377565/109970300000000,TSUKUMO Nefry BT 購入ページ}　（店頭取扱あり）
   * @<href>{http://eleshop.jp/shop/g/gI1J121/,共立電子産業株式会社 Nefry BT 購入ページ}　（店頭取扱あり）
   * @<href>{http://wakamatsu.co.jp/biz/products/detail.php?product_id=38320041,株式会社若松通商 Nefry BT 購入ページ}（店頭取扱あり）
 
-== Nefryの作例情報
+== ディスプレイ購入情報
+Nefry用のディスプレイを購入できるサイトや店舗を紹介します。（2018年3月現在）
 
+  * @<href>{https://dotstud.io/shop/nefry-bt-display/,dotstudio株式会社 Nefry BT用ディスプレイ購入ページ}
+
+== Nefryの作例情報
+I
 Nefryを活用した例がご覧になれます。参考にして自分でも作ってみませんか？
 
  * @<href>{https://qiita.com/tags/nefry,QiitaのNefryタグ}
