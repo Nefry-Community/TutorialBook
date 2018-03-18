@@ -1,5 +1,4 @@
 \usepackage[most]{tcolorbox}
-\usepackage{wrapfig}
 \tcbuselibrary{breakable}
 \renewenvironment{shaded}{
  \vspace{\baselineskip}
@@ -134,14 +133,7 @@
    \medskip{\listcaption#1\relax}\vspace*{-1.3zw}}}
 
 \renewcommand{\reviewindepimagecaption}[1]{%
-  \begin{wrapfigure}{l}{.4\linewidth}
-  \vspace{-2\baselineskip}
-  \begin{center}
-  #1
-  \end{center}
-  \vspace{-3\baselineskip}
-  \end{wrapfigure}
-}
+  \begin{center}#1\end{center}}
 
 \renewcommand{\reviewboxcaption}[1]{%
   {\def\captionhead{\sffamily{\color{black!30!white}{▼}}}
