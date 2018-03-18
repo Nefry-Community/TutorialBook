@@ -5,7 +5,7 @@
 Nefryは2.4GHz帯の無線LANと接続することができます。
 
 Nefryに接続できる無線LANを設定するために、@<chap>{01NefrySetup}でセットアップしたNefryをPCやモバイルバッテリーなどに接続しましょう。
-//image[power_supply][電源接続]{
+//image[power_supply][電源接続][scale=0.8]{
 //}
 
 接続することができるとNefryに付いているLEDが点滅して起動します。
@@ -14,7 +14,7 @@ Nefryに接続できる無線LANを設定するために、@<chap>{01NefrySetup}
 ちなみにこの無線LANの名前はNefryごとに個別のものになっているので注意してください。
 このときディスプレイがあると、どのような状態か簡単に確認することができます。
 
-//image[nefry_wifi][無線LANのSSIDを確認しよう]{
+//image[nefry_wifi][無線LANのSSIDを確認しよう][scale=0.7]{
 //}
 
 ちなみに、Nefryの無線LANに接続中は設定している端末がインターネットに繋がらなくなるので注意してください。
@@ -22,14 +22,14 @@ Nefryに接続できる無線LANを設定するために、@<chap>{01NefrySetup}
 Nefry BTの無線LANに接続すると自動で設定ページのウィンドウが立ち上がります。（立ち上がらない場合はブラウザでhttp://192.168.4.1 にアクセスします。）
 
 このページからNefryに関するさまざまな設定ができます。
-//image[setup_page][設定ページ]{
+//image[setup_page][設定ページ][scale=0.8]{
 //}
 
 今回必要な設定は無線LANの情報なので「Setup WiFi」をクリックします。
 
 無線LANの設定画面に移動したらNefryが利用する無線LANのSSIDとパスワードをそれぞれの欄に入力します。
 入力が完了したら「Save」をクリックし、保存します。
-//image[setup_wifi][無線LANの設定]{
+//image[setup_wifi][無線LANの設定][scale=0.8]{
 //}
 
 しばらくすると、Nefryは設定を有効にするために自動で再起動します。
@@ -38,7 +38,7 @@ Nefry BTの無線LANに接続すると自動で設定ページのウィンドウ
 確認のために再度Nefryの無線LANにつなぎセットアップ画面を開くと、利用する無線LANのSSIDとNefry BTのIPアドレスが表示されているはずです。
 
 このときに無線LANのSSIDの表記がない場合、リセットボタンを押して再起動するか無線LANの設定があっているか再度確認して、設定してください。
-//image[nefry_ip][IPアドレス確認]{
+//image[nefry_ip][IPアドレス確認][scale=0.8]{
 //}
 
 以後同じ無線LANを利用するときはインターネットに繋いだままこのIPアドレスで設定ができます。
