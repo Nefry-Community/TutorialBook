@@ -25,6 +25,7 @@ module.exports = grunt => {
 					`${articles}/*.epub`,
 					`${articles}/*.html`,
 					`${articles}/*.xml`,
+					`${articles}/*.tex`,
 					`${articles}/*.txt`
 				]
 			},
@@ -158,6 +159,11 @@ module.exports = grunt => {
 		"epub",
 		"原稿をコンパイルしてepubファイルにする",
 		generateTask("epub"));
+
+	grunt.registerTask(
+		"latex",
+		"原稿をコンパイルしてlatexファイルにする",
+		generateTask("latex"));
 
 	require("load-grunt-tasks")(grunt);
 };
