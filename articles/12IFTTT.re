@@ -8,7 +8,7 @@
 
 == IFTTTとは
 
-//image[ifttt_action20][IFTTT公式ページ]{
+//image[ifttt_action20][IFTTT公式ページ][scale=0.8]{
 //}
 
 @<href>{https://ifttt.com/,IFTTT公式ページ}（@<href>{https://ifttt.com/}）
@@ -38,13 +38,13 @@ Webhooksにアクセスがあったら発動するようになっており、Nef
 IFTTTのサイト上部の「My Applet」をクリックし、「New Applet」をクリックすると@<href>{https://ifttt.com/create,レシピ作成ページ}が開かれます。
 
 そこから「@<strong>{+this}」部分をクリックし、トリガーの作成をします。
-//image[ifttt_trigger1][トリガーを作成します]{
+//image[ifttt_trigger1][トリガーを作成します][scale=0.6]{
 //}
 
 IFTTTに多数あるサービスから目的のものを探すのは大変ですので検索欄から「Webhooks」を検索しましょう。
 
 見つかったら「Webhooks」をクリックしましょう。
-//image[ifttt_trigger2][Webhooks追加]{
+//image[ifttt_trigger2][Webhooks追加][scale=0.6]{
 //}
 
 任意のイベント名をつけます。
@@ -54,7 +54,7 @@ IFTTTに多数あるサービスから目的のものを探すのは大変です
 特にこだわりがなければ「Nefry_IFTTT」と入力しましょう。
 入力が終わったら「Create trigger」をクリックして次に進みます。
 
-//image[ifttt_trigger3][イベント名指定]{
+//image[ifttt_trigger3][イベント名指定][scale=0.6]{
 //}
 
 === アクションの作成
@@ -63,7 +63,7 @@ IFTTTに多数あるサービスから目的のものを探すのは大変です
 
 「@<strong>{+that}」から進めましょう。
 
-//image[ifttt_action1][アクション作成]{
+//image[ifttt_action1][アクション作成][scale=0.6]{
 //}
 
 Nefryのスイッチを押したら実行したいWebサービスを自由に選びます。
@@ -74,7 +74,7 @@ Nefryのスイッチを押したら実行したいWebサービスを自由に選
 
 Twitterのアイコンをクリックして次に進みます。
 
-//image[ifttt_action2][サービス選択]{
+//image[ifttt_action2][サービス選択][scale=0.6]{
 //}
 
 起こしたいアクションを選びましょう。
@@ -83,19 +83,19 @@ Twitterのアイコンをクリックして次に進みます。
 
 Twitterだと、写真を付けたTweetすることやDMを送ることができますが、今回はシンプルに「Post a tweet（Tweetする）」を選んでクリックします。
 
-//image[ifttt_action3][Tweetするようにします]{
+//image[ifttt_action3][Tweetするようにします][scale=0.6]{
 //}
 
 Tweetする内容を入力し、「Create action」をクリックします。
 
-//image[ifttt_action4][アクションを作成します]{
+//image[ifttt_action4][アクションを作成します][scale=0.6]{
 //}
 
 新しいレシピができました！
 
 「Webhooksを受け取ったらTweetする」というレシピです。
 「Finish」で完了します。
-//image[ifttt_action5][作成完了]{
+//image[ifttt_action5][作成完了][scale=0.6]{
 //}
 
 == WebhooksのSecret Keyを取得
@@ -103,32 +103,32 @@ Tweetする内容を入力し、「Create action」をクリックします。
 NefryとWebhooksと紐付けるための「Secret Key」を取得します。
 
 @<href>{https://ifttt.com/discover,IFTTTサイト上部のSearch}からWebhooksを検索しましょう。
-//image[ifttt_discover1][検索]{
+//image[ifttt_discover1][検索][scale=0.6]{
 //}
 
 Webhooksのページに移動します。（初回は認証画面が表示されるので「Connect」で開始しましょう。）
 
 右上の「Setting」に移動します。
-//image[ifttt_discover2][Webhooks選択]{
+//image[ifttt_discover2][Webhooks選択][scale=0.6]{
 //}
 
 「URL」の末尾に自身のSecret Keyが記載されているのでコピーしましょう！
-//image[ifttt_discover3][SecretKey取得]{
+//image[ifttt_discover3][SecretKey取得][scale=0.6]{
 //}
 
 == Nefry BTにSecret Keyを登録する
 あらかじめ@<chap>{11NefryWiFi}で無線LANの設定を済ませておいてください。
 
 @<chap>{11NefryWiFi}でNefryの設定画面にはいった方法で設定画面を開きます。
-//image[ifttt_setup1][セットアップ]{
+//image[ifttt_setup1][セットアップ][scale=0.6]{
 //}
 
 先ほど取得したWebhooksの「Secret Key」と「Event Name」をそれぞれ入力し保存します。
-//image[ifttt_setup2][保存]{
+//image[ifttt_setup2][保存][scale=0.6]{
 //}
 Nefry BTのスイッチ（ResetではなくSWと書いてある方）を押してみましょう。
 
-//image[nefry_ifttt][実行してみよう]{
+//image[nefry_ifttt][実行してみよう][scale=0.8]{
 //}
 
 スイッチを押すとTweetする連携ができました！（IFTTTのサーバ状況により送信に時間がかかる場合があります。）
