@@ -29,7 +29,7 @@ Nefry BTの無線LANに接続すると自動で設定ページのウィンドウ
 
 無線LANの設定画面に移動したらNefryが利用する無線LANのSSIDとパスワードをそれぞれの欄に入力します。
 入力が完了したら「Save」をクリックし、保存します。
-//image[setup_wifi][WiFi設定]{
+//image[setup_wifi][無線LANの設定]{
 //}
 
 しばらくすると、Nefryは設定を有効にするために自動で再起動します。
