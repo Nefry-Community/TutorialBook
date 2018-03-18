@@ -6,3 +6,7 @@ articles/*.html
 .sass-cache
 publish/
 articles/webroot/
+
+*.iml
+.idea
+*.epub
