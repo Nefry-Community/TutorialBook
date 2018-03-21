@@ -13,7 +13,7 @@ Arduinoのサイト（https://www.arduino.cc/en/Main/Software）から自身の�
 
 
 
-//image[arduino_ide_download][ArduinoのサイトからIDEをダウンロード]{
+//image[arduino_ide_download][ArduinoのサイトからIDEをダウンロード][scale=0.8]{
 //}
 
 
@@ -23,7 +23,7 @@ Windows用、macOS用、Linux用が用意されています。Linux用にはARM�
 
 
 
-//image[arduino_ide_donation][Arduinoへの寄付]{
+//image[arduino_ide_donation][Arduinoへの寄付][scale=0.8]{
 //}
 
 
@@ -35,7 +35,7 @@ Windows用、macOS用、Linux用が用意されています。Linux用にはARM�
 === macOS向けのIDE
 
 
-//image[arduino_ide_mac][macOSでのインストール]{
+//image[arduino_ide_mac][macOSでのインストール][scale=0.8]{
 //}
 
 
@@ -51,7 +51,7 @@ Windowsの場合、インストーラーをダウンロードするやりかた�
 今回は、インストーラーをダウンロードする方法を紹介します。
 
 
-//image[arduino_ide_win_installer][Windows向けのインストーラー（EULA画面）]{
+//image[arduino_ide_win_installer][Windows向けのインストーラー（EULA画面）][scale=0.6]{
 //}
 
 
@@ -61,7 +61,7 @@ Windowsの場合、インストーラーをダウンロードするやりかた�
 
 
 
-//image[arduino_ide_win_installer2][Windows向けのインストーラー（オプション画面）]{
+//image[arduino_ide_win_installer2][Windows向けのインストーラー（オプション画面）][scale=0.6]{
 //}
 
 
@@ -71,7 +71,7 @@ Windowsの場合、インストーラーをダウンロードするやりかた�
 
 
 
-//image[arduino_ide_win_zip][Windows向けのIDEのZIPファイルを解凍]{
+//image[arduino_ide_win_zip][Windows向けのIDEのZIPファイルを解凍][scale=0.6]{
 //}
 
 
@@ -81,7 +81,7 @@ Windowsの場合、インストーラーをダウンロードするやりかた�
 
 
 
-//image[arduino_ide_win_app_store][WindowsストアからArduino IDEをインストールする]{
+//image[arduino_ide_win_app_store][WindowsストアからArduino IDEをインストールする][scale=0.6]{
 //}
 
 
@@ -93,7 +93,7 @@ Windows 8.1や10をお使いであれば、WindowsストアからもArduino IDE�
 === 起動してみる
 
 
-//image[arduino_ide_main][Arduino IDE メイン画面]{
+//image[arduino_ide_main][Arduino IDE メイン画面][scale=0.6]{
 //}
 
 
@@ -116,7 +116,7 @@ Windows 8.1や10をお使いであれば、WindowsストアからもArduino IDE�
 http://nefry.studio/package_nefrybt_index.json
 //}
 
-//image[mac01][環境設定]{
+//image[mac01][環境設定][scale=0.8]{
 //}
 
 
@@ -132,7 +132,7 @@ http://nefry.studio/package_nefrybt_index.json
 
 
 
-//image[mac02][ボードマネージャーの開き方]{
+//image[mac02][ボードマネージャーの開き方][scale=0.8]{
 //}
 
 
@@ -141,7 +141,7 @@ http://nefry.studio/package_nefrybt_index.json
 するとこのようなボードマネージャダイアログが表示されます。
 
 
-//image[mac03][ボードマネージャー]{
+//image[mac03][ボードマネージャー][scale=0.8]{
 //}
 
 
@@ -154,7 +154,7 @@ http://nefry.studio/package_nefrybt_index.json
 
 
 
-//image[mac04][ボードマネージャーにNefryと入力する]{
+//image[mac04][ボードマネージャーにNefryと入力する][scale=0.8]{
 //}
 
 
@@ -171,7 +171,7 @@ http://nefry.studio/package_nefrybt_index.json
 Nefry BTのライブラリバージョンは、 メジャーバージョン、マイナーバージョン、パッチバージョンに分かれています。
 
 
-//image[nefry_version][Nefry BTのバージョン]{
+//image[nefry_version][Nefry BTのバージョン][scale=0.8]{
 //}
 
 
@@ -184,7 +184,7 @@ LTS(安定)版と開発版を分けていて、マイナーバージョンが偶
 更新についてはNefryのGitHubページ（https://github.com/Nefry-Community/arduino-esp32/）にあるリリースノートに記載がありますので、参考にしてみて下さい。
 
 
-//image[mac05][インストール]{
+//image[mac05][インストール][scale=0.8]{
 //}
 
 
@@ -197,7 +197,7 @@ LTS(安定)版と開発版を分けていて、マイナーバージョンが偶
 
 メニューの@<tt>{ツール} > @<tt>{ボード}を選択したときに@<tt>{Nefry BT}の項目が追加されていればOKです。
 
-//image[mac06][ボード選択]{
+//image[mac06][ボード選択][scale=0.8]{
 //}
 
 
@@ -213,7 +213,7 @@ LTS(安定)版と開発版を分けていて、マイナーバージョンが偶
 Nefry BTがお手元に届いたら、まずはバージョンを確認しましょう！
 
 
-//image[mac07][ボード選択詳細]{
+//image[mac07][ボード選択詳細][scale=0.4]{
 //}
 
 
@@ -228,7 +228,7 @@ Nefry BTには無印のもの（R1）とR2が存在します（2018年1月現在
 Nefryボードには、初期NefryやNefry v2.0（https://dotstud.io/shop/nefry-connect-internet/）というバージョンも存在するので、BT内ではRevisionで分類しています。
 
 
-//image[device][ボード背面]{
+//image[device][ボード背面][scale=0.8]{
 //}
 
 
