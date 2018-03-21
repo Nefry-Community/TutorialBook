@@ -16,11 +16,11 @@ GPIOとはデジタル信号を出し入れする仕組みのことです。GPIO
 == Nefry BTのGPIOの位置
 
 
-Nefry BTではGPIOを使える以下のGPIOピンとGroveポートが搭載されています。
+Nefry BTではGPIOを使える次のGPIOピンとGroveポートが搭載されています。
 
 
 
-//image[05DigitalLED_01][Nefry BTのGPIOの位置]{
+//image[05DigitalLED_01][Nefry BTのGPIOの位置][scale=0.8]{
 //}
 
 
@@ -40,7 +40,7 @@ Nefry BTのピンでD0とD1がありますが、そのふたつのピンはデ�
 
 
 
-//image[05DigitalLED_02][LEDのアソード・カソード]{
+//image[05DigitalLED_02][LEDのアソード・カソード][scale=0.8]{
 //}
 
 
@@ -50,7 +50,7 @@ LEDの2本の配線から足の長短を確認してきましょう。足の長�
 
 
 
-//image[05DigitalLED_03][Nefry R2の場合のLEDの足の差し込み方]{
+//image[05DigitalLED_03][Nefry R2の場合のLEDの足の差し込み方][scale=0.8]{
 //}
 
 
@@ -60,7 +60,7 @@ Nefry BT R2 のA1ピンソケットにLEDの足の長い方を、隣のGNDピン
 
 
 
-//image[05DigitalLED_04][Nefry BT R2 に差し込んだ状態]{
+//image[05DigitalLED_04][Nefry BT R2 に差し込んだ状態][scale=0.8]{
 //}
 
 
@@ -80,7 +80,7 @@ Nefry BTの製造バージョンによってはA1ピンソケットとGNDピン�
 
 
 
-//image[05DigitalLED_05][プログラム]{
+//image[05DigitalLED_05][プログラム][scale=0.6]{
 //}
 
 
@@ -153,7 +153,7 @@ void loop() {
 
 
 
-//image[05DigitalLED_06][LEDが点滅する流れ]{
+//image[05DigitalLED_06][LEDが点滅する流れ][scale=0.8]{
 //}
 
 
@@ -164,4 +164,3 @@ void loop() {
 
 
 お疲れ様でした。
-
