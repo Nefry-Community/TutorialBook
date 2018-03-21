@@ -23,31 +23,31 @@ Nefry BTをPCのUSBポートにさしてください。Arduino IDEでシリア�
 === プログラムを書き込む
 次のようなウインドウが表示されます。
 
-//image[image1][Arduino IDEの初期ファイル]{
+//image[image1][Arduino IDEの初期ファイル][scale=0.6]
 //}
 
 @<tt>{void setup()} 内に起動時に実行したいプログラムを、@<tt>{void loop()} 内に起動中実行したいプログラムを記述していきます。
 
-//image[image2][プログラムのファイルを名前をつけて保存]{
+//image[image2][プログラムのファイルを名前をつけて保存][scale=0.6]{
 //}
 左上の「✔︎」を押すとエラーが無いか検証し、「→」を押すとボードにプログラムを書き込みます。
 
 == Webコンソールから.binファイルをアップロードする
 === プログラムをコンパイルする
-//image[image3][02NefryProgram]{
+//image[image3][02NefryProgram][scale=0.4]{
 //}
 Arduino IDEでプログラムを書いたあと、@<tt>{ファイル} > @<tt>{名前をつけて保存} を選び、任意の場所に保存します。
 
-//image[image6][コンパイルしたバイナリを出力]{
+//image[image6][コンパイルしたバイナリを出力][scale=0.4]{
 //}
 @<tt>{スケッチ} > @<tt>{コンパイルしたバイナリを出力} を選択すると、先ほど保存した場所に.binファイルが作成されます。
 
 === Nefryコンソールを開く
-//image[image4][02NefryProgram]{
+//image[image4][02NefryProgram][scale=0.8]{
 //}
 前章を参考に、NefryのWebコンソールを開きます。「Upload Sketch」を選択します。
 
-//image[image5][02NefryProgram]{
+//image[image5][02NefryProgram][scale=0.8]{
 //}
 先ほど保存した.binファイルをドラッグ＆ドロップ（又はファイルを選択）します。
 
