@@ -23,7 +23,7 @@ Nefry BTをPCのUSBポートにさしてください。Arduino IDEでシリア�
 === プログラムを書き込む
 次のようなウインドウが表示されます。
 
-//image[image1][Arduino IDEの初期ファイル][scale=0.6]
+//image[image1][Arduino IDEの初期ファイル][scale=0.6]{
 //}
 
 @<tt>{void setup()} 内に起動時に実行したいプログラムを、@<tt>{void loop()} 内に起動中実行したいプログラムを記述していきます。
