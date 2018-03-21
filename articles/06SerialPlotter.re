@@ -1,5 +1,4 @@
-
-== シリアルモニタ・シリアルプロッタを使って Nefry BT の動作を見てみよう
+= シリアルモニタ・シリアルプロッタを使って Nefry BT の動作を見てみよう
 
 
 この章ではArduino IDE のシリアルモニタ・シリアルプロッタという機能を使って、Nefry BT の中で起こっていることを表示する仕組みを説明します。
@@ -8,11 +7,11 @@
 == シリアルモニタ・シリアルプロッタとは
 
 
-シリアルモニタ・シリアルプロッタのシリアルというのはシリアル通信のことです。シリアル通信は Nefry BTとコンピュータと通信するために使われる通信方法です。文字列や数字など様々なデータを送ることが可能です。
+シリアルモニタ・シリアルプロッタのシリアルというのはシリアル通信のことです。シリアル通信は Nefry BTとコンピュータと通信するために使われる通信方法です。文字列や数字などさまざまなデータを送ることが可能です。
 
 
 
-//image[06SerialPlotter_01][シリアル通信の流れ]{
+//image[06SerialPlotter_01][シリアル通信の流れ][scale=0.8]{
 //}
 
 
@@ -26,7 +25,7 @@
 
 
 
-//image[06SerialPlotter_02][シリアルモニタの例]{
+//image[06SerialPlotter_02][シリアルモニタの例][scale=0.8]{
 //}
 
 
@@ -36,7 +35,7 @@
 
 
 
-//image[06SerialPlotter_03][シリアルプロッタの例]{
+//image[06SerialPlotter_03][シリアルプロッタの例][scale=0.8]{
 //}
 
 
@@ -52,7 +51,7 @@ Nefry BT の準備です。USBを差し込み、@<href>{02ArduinoSetting,Arduino
 
 
 
-//image[06SerialPlotter_04][差し込まれたポートをチェック]{
+//image[06SerialPlotter_04][差し込まれたポートをチェック][scale=0.6]{
 //}
 
 
@@ -64,7 +63,7 @@ Nefry BT の準備です。USBを差し込み、@<href>{02ArduinoSetting,Arduino
 
 
 
-//image[06SerialPlotter_05][今回のプログラム]{
+//image[06SerialPlotter_05][今回のプログラム][scale=0.6]{
 //}
 
 
@@ -132,7 +131,7 @@ void loop() {
 
 
 
-//image[06SerialPlotter_06][ツールからシリアルモニタを選択する]{
+//image[06SerialPlotter_06][ツールからシリアルモニタを選択する][scale=0.4]{
 //}
 
 
@@ -142,7 +141,7 @@ void loop() {
 
 
 
-//image[06SerialPlotter_07][なにも動かしていないときのシリアルモニタ]{
+//image[06SerialPlotter_07][なにも動かしていないときのシリアルモニタ][scale=0.8]{
 //}
 
 
@@ -152,7 +151,7 @@ void loop() {
 
 
 
-//image[06SerialPlotter_08][ボタンを押したときのシリアルモニタ]{
+//image[06SerialPlotter_08][ボタンを押したときのシリアルモニタ][scale=0.8]{
 //}
 
 
@@ -168,7 +167,7 @@ void loop() {
 
 
 
-//image[06SerialPlotter_09][ツールからシリアルプロッタを選択する]{
+//image[06SerialPlotter_09][ツールからシリアルプロッタを選択する][scale=0.4]{
 //}
 
 
@@ -178,7 +177,7 @@ void loop() {
 
 
 
-//image[06SerialPlotter_10][ボタンを押したときのシリアルプロッタ]{
+//image[06SerialPlotter_10][ボタンを押したときのシリアルプロッタ][scale=0.8]{
 //}
 
 
@@ -189,4 +188,3 @@ void loop() {
 
 
 お疲れ様でした。
-
