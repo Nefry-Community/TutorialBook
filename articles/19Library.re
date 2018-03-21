@@ -1,367 +1,122 @@
-
 = Nefryライブラリ紹介
 
-
 この章ではNefry BTの便利なライブラリの一部をご紹介します。
-
+詳しい使いかたについては、Nefry事例本をご覧ください。
 
 == Ambientライブラリ（NefryAmbient.h）
 
+Ambient（@<href>{https://ambidata.io/}）は、主にマイコンボードなどからのデータを簡単に可視化できるサービスです。
 
-Ambient（https://ambidata.io/）は、主にマイコンボードなどからのデータを無料で簡単に可視化できるサービスです。
+サンプルコードは@<tt>{NefryLibrary/ambient}から確認することができます。
 
-
-
-//image[ambient_top][Ambientのホームページ]{
+//image[ambient_top][Ambientのホームページ][scale=0.8]{
 //}
-
-
-
 
 Ambientライブラリは、@<tt>{NefryAmbient.h}をincludeすることで使えるようになります。
 
+@<tt>{begin()}関数で、データを送信したいチャネルのIDとライトキーを設定します。
+その後@<tt>{set()}でデータを詰めて@<tt>{send()}を呼ぶことでデータをAmbientに送信できます。
 
-//emlist{
-// Ambientライブラリを使うのに必要
-#include <NefryAmbient.h>
+サンプルコードでは、A0ピンのアナログ入力値を読み取り、Ambientに送信しています。
 
-// データを送りたいAmbientのチャネルのID（数値）とライトキー
-#define CHANNEL_ID xxxxx
-#define WRITE_KEY "xxxxx"
+@<tt>{begin()}関数で必要になる、チャネルIDとライトキーは「Myチャネル」から確認できます。
 
-// Ambientと通信するために必要なインスタンス
-NefryAmbient nefryAmbient;
-
-void setup() {
-  //Ambientを使えるように初期設定をする
-  nefryAmbient.begin(CHANNEL_ID, WRITE_KEY);
-  Nefry.println("Ambient initialized");
-}
-
-void loop() {
-  // A0ピンの値をセットします。第一引数はセットしたいフィールド（1〜8）です。
-  nefryAmbient.set(1, analogRead(A0));
-
-  //Ambientにデータを送信します。
-  nefryAmbient.send();
-  Nefry.println("Data pushed");
-
-  Nefry.ndelay(1000);//1秒待つ
-}
+//image[ambient_detail][Myチャネル][scale=0.8]{
 //}
-
-
-@<tt>{begin()}関数で、データを送信したいチャネルのIDとライトキーを設定し、その後@<tt>{set()}でデータを詰めて@<tt>{send()}を呼ぶだけでデータをAmbientにアップデートできます。上記の例では、A0ピンのアナログ入力値を読み取り、Ambientに送信しています。
-
-
-
-//image[ambient_detail][Myチャネル]{
-//}
-
-
-
-
-上記の関数で必要になる、チャネルIDとライトキーは「Myチャネル」から確認できます。
-
 
 == Microsoft Azure IoT Hubライブラリ（NefryAzureIoTHub.h）
 
+IoT Hub（@<href>{https://azure.microsoft.com/ja-jp/services/iot-hub/}）とは、Microsoft Azureで提供されているIoT向けのバックエンドサービスです。
 
-IoT Hub（https://azure.microsoft.com/ja-jp/services/iot-hub/）とは、Microsoft Azureで提供されているIoT向けのバックエンドサービスのことです。
+サンプルコードは@<tt>{NefryLibrary/azureiothub}から確認することができます。
 
 
-
-//image[azureiothub_top][Microsoft Azure IoT Hubホームページ]{
+//image[azureiothub_top][Microsoft Azure IoT Hubホームページ][scale=0.8]{
 //}
 
+IoT Hubライブラリは、@<tt>{NefryAzureIoTHub.h}をincludeすることで使えるようになります
 
+@<tt>{begin()}関数で、接続文字列というIoT Hub用のアクセスキーを設定し、@<tt>{setCallback()}関数でIoT Hubからのメッセージを受け取る関数の設定を行っています。
+データをIoT Hubに送信するときは、@<tt>{connect()}関数で接続してから、@<tt>{DataElement}インスタンスに送信したい値を詰めて、@<tt>{push()}関数で送信します。
 
+サンプルコードでは、A0ピンのアナログ入力値を読み取り、Azure IoT Hubに送信しています。
 
-Nefry BTでは、@<tt>{NefryAzureIoTHub.h}をincludeすることで、データをIoT Hubにアップロードできます。A0ピンのアナログ入力値を読み取りIoT Hubにアップロードするにはこのようにコーディングします。
+@<tt>{begin()}関数で必要な接続文字列は、IoT Hub内のデバイスエクスプローラーを開き、登録したデバイスを選択すると次のような画面が表示され確認することができます。
+登録したデバイスごとに接続文字列が異なるので注意が必要です。
 
-
-//emlist{
-// Microsoft Azure IoT Hubライブラリを使うのに必要
-#include <NefryAzureIoTHub.h>
-
-// 接続文字列
-#define CONNECTION_STRING "xxxxx"
-
-void setup() {
-  // 接続文字列を使ってIoT Hubとの接続を初期化する
-  while (!Azure.begin(CONNECTION_STRING)) {
-    Nefry.println("Azure begin Failed");
-    delay(1000);
-  }
-  Nefry.println("Azure initialized");
-
-  // IoT Hubからのメッセージを受信する関数を指定する
-  Azure.setCallback(azureCallback);
-}
-
-void azureCallback(String s) {
-  Nefry.print("Azure Message arrived [");
-  Nefry.print(s);
-  Nefry.println("] ");
-}
-
-void loop() {
-  if (WiFi.status() == WL_CONNECTED) {
-    // IoT Hubに接続する
-    Azure.connect();
-
-    // A0ピンのアナログ値を読み取ってDataElementインスタンスに格納する
-    DataElement dataElement = DataElement();
-    dataElement.setValue("Nefry", analogRead(A0));
-
-    // そのデータをIoT Hubに送信する
-    Azure.push(&dataElement);
-    Nefry.println("Data pushed");
-    delay(2000);
-  } else {
-    Nefry.println("Not connected to the Internet");
-    delay(250);
-  }
-}
+//image[azureiothub_detail][デバイスエクスプローラー][scale=0.8]{
 //}
 
+== FASTSENSINGライブラリ（NefryFastSensing.h）
+FASTSENSING（@<href>{https://fastsensing.com/ja/}）は、専用のデバイスやマイコンボードからのセンサーデータを受信し、グラフ化や異常検知をしてくれるサービスです。
 
-接続文字列というIoT Hub用のアクセスキーでNefry BTは通信を行うため、@<tt>{setup()}内で初期化を行っています。データをIoT Hubに送信するときは、都度@<tt>{Azure.connect()}で接続してから、@<tt>{DataElement}インスタンスに送信したい値を詰めて、@<tt>{Azure.push()}で送信します。
-
-
-
-//image[azureiothub_detail][デバイスエクスプローラー]{
+サンプルコードは@<tt>{NefryLibrary/fastsensing}から確認することができます。
+//image[fastsensing_top][Fastsensingのホームページ][scale=0.8]{
 //}
 
+FASTSENSINGライブラリは、@<tt>{NefryFastSensing.h}をincludeすることで使えるようになります
 
+@<tt>{begin()}関数で、データを送信したいデバイスと３つのチャンネルを設定します。
+その後@<tt>{setValue()}関数でデータを詰めて@<tt>{push()}関数を呼ぶことでデータをFASTSENSINGに送信できます。
 
+サンプルコードでは、A0ピンのアナログ入力値を読み取り、FASTSENSINGに送信しています。
 
-接続文字列は、IoT Hub内のデバイスエクスプローラーを開き、登録したデバイスを選択すると上のような画面が表示され確認することができます。登録したデバイスごとに接続文字列が異なるので注意が必要です。
-
-
-== Fastsensingライブラリ（NefryFastSensing.h）
-
-
-Fastsensing（https://fastsensing.com/ja/）は、専用のデバイスやマイコンボードからのセンサーデータを受信し、グラフ化や異常検知をしてくれるサービスです。
-
-
-
-//image[fastsensing_top][Fastsensingのホームページ]{
-//}
-
-
-
-
-通常は専用のデバイスからセンサーデータをアップロードするのですが、ファストセンシング・ディベロッパー・プログラム（https://fastsensing.com/ja/developer/）をつかって、さまざまなマイコンボードからデータをアップロードすることができます。
-
-
-
-//image[fastsensing_developer_program][ファストセンシング・ディベロッパー・プログラム]{
-//}
-
-
-
-
-ファストセンシング・ディベロッパー・プログラムのページ上の@<tt>{スタブデバイスの追加}のリンクから、Fastsensingのコンソールに遷移でき、仮想のデバイスを登録することができます。
-
-
-
-//image[fastsensing_add_stub_device][スタブデバイスの追加]{
-//}
-
-
-
-
-ここから@<tt>{スタブデバイス}を追加すると、1つのデバイスに対して3つの独立したチャネルが割り当てられて、それぞれのチャネルに対してセンサーデータをアップロードすることができます。
-
-
-
-//image[fastsensing_detail][スタブデバイスの詳細]{
-//}
-
-
-
-
-コンソール（https://console.fastsensing.com/devices）に登録した@<tt>{スタブデバイス}が表示されいるので、それを選択するとデバイスの詳細画面が表示されます。そこで、デバイスと各チャネルのトークンが表示されます。Nefry BTのFastsensingライブラリでは、これらのトークンをつかってセンサーデータをアップロードします。
-
-
-
-A0ピンのアナログ入力値を読み取りアップロードしてみましょう。
-
-
-//emlist{
-// FastSensingライブラリを使うのに必要
-#include <NefryFastSensing.h>
-
-// デバイスのトークンとチャネル1〜3のトークン
-#define DEVICE_TOKEN "xxxxx"
-#define CHANNEL1_TOKEN "xxxxx"
-#define CHANNEL2_TOKEN "xxxxx"
-#define CHANNEL3_TOKEN "xxxxx"
-
-// Fastsensingと通信するために必要なインスタンス
-NefryFastSensing fastSensing;
-
-void setup() {
-  // トークンを使って初期化
-  fastSensing.begin(DEVICE_TOKEN, CHANNEL1_TOKEN, CHANNEL2_TOKEN, CHANNEL3_TOKEN);
-  Nefry.println("FastSensing initialized");
-}
-
-void loop() {
-  // A0ピンの値をセットします。一つ目の引数はチャネル（0〜2）を指定しています。
-  fastSensing.setValue(0, analogRead(A0));
-
-  // セットしたデータをFastsensingに送信します
-  fastSensing.push();
-  Nefry.println("Data pushed");
-
-  delay(10000);
-}
+@<tt>{begin()}関数で必要なトークンは、FASTSENSINGのデバイスタブから@<tt>{開発用スタブデバイス}をクリックすると次のような画面が表示され確認することができます。
+//image[fastsensing_detail][スタブデバイスの詳細][scale=0.8]{
 //}
 
 == ThingSpeakライブラリ（NefryThingSpeak.h）
+ThingSpeak（@<href>{https://thingspeak.com/}）は、マイコンなどからのセンサーデータを収取し、グラフ化やMATLABを使って分析を行えるだけでなく、Twitterなどの別のサービスへのアクションを行えるサービスです。
 
-
-ThingSpeak（https://thingspeak.com/）は、マイコンなどからのセンサーデータを収取し、グラフ化やMATLABを使って分析を行えるだけでなく、Twitterなどの別のサービスへのアクションを行えるサービスです。
-
-
-
-//image[thingspeak_top][ThingSpeakのホームページ]{
+サンプルコードは@<tt>{NefryLibrary/thingspeak}から確認することができます。
+//image[thingspeak_top][ThingSpeakのホームページ][scale=0.8]{
 //}
 
+ThingSpeakはチャネルを作ると1つのチャネルにつき最大8つデータを別々にアップロードすることができます。
 
+ThingSpeakライブラリは、@<tt>{NefryThingSpeak.h}をincludeすることで使えるようになります
 
+@<tt>{begin()}関数で、チャンネルIDを設定し、@<tt>{setWriteAPIKey()}関数でライトAPIキーの設定します。
+その後@<tt>{writeField()}関数を呼ぶことでデータをThingSpeakに送信できます。
 
-ThingSpeakにセンサーデータをアップロードするには、まずチャネルを作成する必要があります。
+サンプルコードでは、A0ピンのアナログ入力値を読み取り、ThingSpeakに送信しています。
 
-
-
-//image[thingspeak_channel_detail][ThingSpeakのチャネル設定]{
-//}
-
-
-
-
-チャネルを作るとフィールドの設定ができ、1つのチャネルにつき最大8つのフィールドを持つことができ、それぞれのフィールドに別々のデータをアップロードすることができます。
-
-
-
-//image[thingspeak_detail][ThingSpeakのAPIキー]{
-//}
-
-
-
-
-Nefry BTからThingSpeakにデータをアップロードする際は、チャネルのIDとライトAPIキーが必要となります。同じチャネルのフィールドであれば、同じライトキーを使うことになります。
-
-
-//emlist{
-// ThingSpeakライブラリを使うのに必要
-#include <NefryThingSpeak.h>
-
-// ThingSpeakで作成したチャネルのID（数値）とライトキー
-#define CHANNEL_ID 447668
-#define WRITE_KEY "1AQGOCTGWAJGVFQN"
-
-void setup() {
-  //ThingSpeakの初期設定を行います。WriteKeyも設定します
-  NefryThingSpeak.begin(CHANNEL_ID);
-  NefryThingSpeak.setWriteAPIKey(WRITE_KEY);
-  Nefry.println("ThingSpeak initialized");
-}
-
-void loop() {
-  // A0ピンのアナログ値を読み取って、ThingSpeakに送信
-  // 第一引数はセットしたいフィールド（1〜8）です。
-  NefryThingSpeak.writeField(1, analogRead(A0));
-  Nefry.println("Data pushed");
-
-  delay(20000);
-}
+設定で必要な情報は、ThingSpeakにデータをアップロードする際は、次の画面のようにThingSpeakのサイトのAPI Keysを確認することができます。
+//image[thingspeak_detail][ThingSpeakのAPIキー][scale=0.8]{
 //}
 
 == Firebaseライブラリ（NefryFireBase.h）
+Firebase（@<href>{https://firebase.google.com/?hl=ja}）は、モバイルとウェブアプリケーションの開発プラットフォームです。
 
+このFirebaseライブラリでは、リアルタイムデータベースへの読み書きを可能にします。
 
-Firebase（https://firebase.google.com/?hl=ja）は、モバイルとウェブアプリケーションの開発プラットフォームです。その中でもNefry BTのFirebaseライブラリでは、リアルタイムデータベースへの読み書きを可能にします。
-
-
-
-//image[firebase_top][Firebaseのホームページ]{
+サンプルコードは@<tt>{NefryLibrary/firebase}から確認することができます。
+//image[firebase_top][Firebaseのホームページ][scale=0.7]{
 //}
 
+Firebaseライブラリは、@<tt>{NefryFireBase.h}をincludeすることで使えるようになります
 
+@<tt>{begin()}関数で、ホスト名とシークレットキーを設定します。
 
+データをFirebaseに送信するときは、@<tt>{DataElement}インスタンスに送信したい値を詰めて、@<tt>{write()}関数で送信します。
 
-Firebaseのページ上でリアルタイムデータベースを作成すると、ホスト名が割り振られます。Firebaseライブラリではこのホストにアクセスします。
+サンプルコードでは、A0ピンのアナログ入力値を読み取り、Firebaseに送信しています。
 
-
-
-//image[firebase_database_host][Firebaseのデータベースのホスト名]{
+設定で必要な情報は、Firebaseのページ上でリアルタイムデータベースを作成すると、@<tt>{begin()}関数で必要なホストを取得できます。
+//image[firebase_database_host][Firebaseのデータベースのホスト名][scale=0.7]{
 //}
 
-
-
-
-リアルタイムデータベースへアクセスするのに必要なシークレットは、プロジェクトの設定＞サービスアカウント＞データベースのシークレットで確認ができます。
-
-
-
-//image[firebase_database_secret][Firebaseのデータベースのシークレット]{
+もうひとつ必要なシークレットキーは、プロジェクトの設定＞サービスアカウント＞データベースのシークレットで確認ができます。
+//image[firebase_database_secret][Firebaseのデータベースのシークレット][scale=0.7]{
 //}
 
-
-
-
-これらの情報を使って、Nefry BTからFirebaseへアクセスします。A0ピンのアナログ値をリアルタイムデータベースにアップロードするプログラムの例は以下のとおりです。
-
-
-//emlist{
-// Firebaseライブラリを使うのに必要
-#include<NefryFireBase.h>
-
-// Firebaseで作成したデータベースのホスト名とアクセスするためのシークレット
-#define HOST "xxxxx"
-#define SECRET "xxxxx"
-
-// Firebaseと通信するために必要なインスタンス
-NefryFireBase firebase;
-
-void setup() {
-  // Firebaseとの接続を初期化
-  firebase.begin(HOST, SECRET);
-  Nefry.println("Firebase initialized");
-}
-
-void loop() {
-  // A0ピンのアナログ値を読み取って、DataElementインスタンスに"A0"というキーで格納する
-  DataElement dataElement = DataElement();
-  dataElement.setValue("A0", analogRead(A0));
-
-  // セットした値を"Nefry"というグループに追加
-  firebase.write("Nefry", &dataElement);
-  Nefry.println("Data pushed");
-
-  delay(1000);
-}
+設定をすると次のようにFirebaseのデータベースに値が送信されたのを確認することができます。
+//image[firebase_database_result][Firebaseのデータベースにデータを送信した例][scale=0.7]{
 //}
-
-
-このコードを実行すると、リアルタイムデータベース上には以下のような情報が保存されます。
-
-
-
-//image[firebase_database_result][Firebaseのデータベースにデータを送信した例]{
-//}
-
-
 
 == ティスプレイ（Nefry_Display）
 
-
-Nefry BTのディスプレイの表示も@<tt>{NefryDisplay.h}をincludeすることでプログラム可能になります。
-
+ティスプレイライブラリは、@<tt>{NefryDisplay.h}をincludeすることで使えるようになります
 
 === 簡単な使い方
 
@@ -378,12 +133,11 @@ void setup() {
 }
 
 void loop() {
-
 }
 //}
 
 
-//image[display1][ディスプレイライブラリの例]{
+//image[display1][ディスプレイライブラリの例][scale=0.8]{
 //}
 
 
@@ -401,12 +155,11 @@ void setup() {
 }
 
 void loop() {
-
 }
 //}
 
 
-//image[display2][長い文字列を表示したとき]{
+//image[display2][長い文字列を表示したとき][scale=0.8]{
 //}
 
 
@@ -427,12 +180,11 @@ void setup() {
 }
 
 void loop() {
-
 }
 //}
 
 
-//image[display3][4行以上の文字列を表示したとき]{
+//image[display3][4行以上の文字列を表示したとき][scale=0.8]{
 //}
 
 
@@ -464,7 +216,6 @@ void setup() {
 }
 
 void loop() {
-
 }
 
 void pokioPrint() {
@@ -476,7 +227,7 @@ void pokioPrint() {
 //}
 
 
-//image[display4][好きな位置に文字を表示する]{
+//image[display4][好きな位置に文字を表示する][scale=0.8]{
 //}
 
 
@@ -498,7 +249,6 @@ void setup() {
 }
 
 void loop() {
-
 }
 
 void pokioPrint() {
@@ -514,11 +264,10 @@ void pokioPrint() {
 //}
 
 
-//image[display5][図形を表示する]{
+//image[display5][図形を表示する][scale=0.8]{
 //}
 
 
 
 
 このように、少し凝った表示も簡単に実装することができます。
-
