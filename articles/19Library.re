@@ -66,7 +66,7 @@ FASTSENSINGライブラリは、@<tt>{NefryFastSensing.h}をincludeすること�
 //}
 
 == ThingSpeakライブラリ（NefryThingSpeak.h）
-ThingSpeak（@<href>{https://thingspeak.com/}）は、マイコンなどからのセンサーデータを収取し、グラフ化やMATLABを使って分析を行えるだけでなく、Twitterなどの別のサービスへのアクションを行えるサービスです。
+ThingSpeak（@<href>{https://thingspeak.com/}）は、マイコンなどからのセンサーデータを収集し、グラフ化やMATLABを使って分析を行えるだけでなく、Twitterなどの別のサービスへのアクションを行えるサービスです。
 
 サンプルコードは@<tt>{NefryLibrary/thingspeak}から確認することができます。
 //image[thingspeak_top][ThingSpeakのホームページ][scale=0.8]{
