@@ -12,7 +12,7 @@ Nefry BTをArduino IDEで開発するにあたり、前の章を見てセット�
 == 内蔵フルカラーLEDの位置
 
 
-//image[03DefaultLed_01][内蔵フルカラーLEDの位置]{
+//image[03DefaultLed_01][内蔵フルカラーLEDの位置][scale=0.8]{
 //}
 
 
@@ -20,7 +20,7 @@ Nefry BTをArduino IDEで開発するにあたり、前の章を見てセット�
 == プログラムの書き込み
 
 
-//image[03DefaultLed_02][次のコードに差し替えたウインドウ]{
+//image[03DefaultLed_02][次のコードに差し替えたウインドウ][scale=0.6]{
 //}
 
 
@@ -114,7 +114,7 @@ void loop() {
 
 
 
-//image[03DefaultLed_03][内蔵してあるフルカラーLEDがカラフルに光ります]{
+//image[03DefaultLed_03][内蔵してあるフルカラーLEDがカラフルに光ります][scale=0.8]{
 //}
 
 
@@ -125,4 +125,3 @@ void loop() {
 
 
 お疲れ様でした。
-

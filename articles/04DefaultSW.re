@@ -12,7 +12,7 @@
 
 
 
-//image[04DefaultSW_01][今回あつかうスイッチの位置]{
+//image[04DefaultSW_01][今回あつかうスイッチの位置][scale=0.8]{
 //}
 
 
@@ -28,7 +28,7 @@
 == プログラムの書き込み
 
 
-//image[04DefaultSW_02][次のコードに差し替えたウインドウ]{
+//image[04DefaultSW_02][次のコードに差し替えたウインドウ][scale=0.6]{
 //}
 
 
@@ -87,7 +87,7 @@ void loop() {
 
 
 
-//image[04DefaultSW_03][起動したときの動き]{
+//image[04DefaultSW_03][起動したときの動き][scale=0.8]{
 //}
 
 
@@ -97,7 +97,7 @@ void loop() {
 
 
 
-//image[04DefaultSW_04][スイッチを押してすぐ離したときの動き]{
+//image[04DefaultSW_04][スイッチを押してすぐ離したときの動き][scale=0.8]{
 //}
 
 
@@ -108,4 +108,3 @@ void loop() {
 
 
 お疲れ様でした。
-
