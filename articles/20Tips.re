@@ -5,7 +5,8 @@
 
 === Nefry BTを初期状態に戻したい
 
-@<chap>{10DefaultPrpgram}を参考にプログラムを書き込んで下さい。
+@<chap>{10DefaultProgram}を参考にプログラムを書き込んで下さい。
+
 === PCがNefry BTを認識できない
 
 Nefry BTのUSBシリアル変換チップ（FTDI）のドライバーがPCにインストールされていない場合は、FTDIのページ（@<href>{http://www.ftdichip.com/Drivers/VCP.htm}）からドライバーをダウンロードしてインストールしてみて下さい。
