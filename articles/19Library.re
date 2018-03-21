@@ -124,7 +124,7 @@ Firebaseライブラリは、@<tt>{NefryFireBase.h}をincludeすることで使�
 たとえば、@<tt>{NefryDisplay#print()}を使うと、簡単にディスプレイに好きな文字列を表示することができます。
 
 
-//image[display1][サンプルコード（@<tt>{NefryLibrary/display1}）の例][scale=0.8]{
+//image[display1][サンプルコード（NefryLibrary/display1）の例][scale=0.8]{
 //}
 
 
@@ -134,7 +134,7 @@ Firebaseライブラリは、@<tt>{NefryFireBase.h}をincludeすることで使�
 
 
 
-//image[display2][サンプルコード（@<tt>{NefryLibrary/display2}）の例][scale=0.8]{
+//image[display2][サンプルコード（NefryLibrary/display2）の例][scale=0.8]{
 //}
 
 
@@ -143,7 +143,7 @@ Firebaseライブラリは、@<tt>{NefryFireBase.h}をincludeすることで使�
 ただし、ディスプレイに表示できるのは3行までで、4行以上表示しようとすると、最後に表示しようとした3行分が表示されます。
 
 
-//image[display3][サンプルコード（@<tt>{NefryLibrary/display3}）の例][scale=0.8]{
+//image[display3][サンプルコード（NefryLibrary/display3）の例][scale=0.8]{
 //}
 
 
@@ -166,7 +166,7 @@ Firebaseライブラリは、@<tt>{NefryFireBase.h}をincludeすることで使�
 たとえば、好きな位置に文字列を表示させたいときは、@<tt>{NefryDisplay#drawString()}を使って関数を記述し、その関数を@<tt>{NefryDisplay#autoScrollFunc()}に渡します。
 
 
-//image[display4][サンプルコード（@<tt>{NefryLibrary/display4}）の例][scale=0.8]{
+//image[display4][サンプルコード（NefryLibrary/display4）の例][scale=0.8]{
 //}
 
 
@@ -179,7 +179,7 @@ Firebaseライブラリは、@<tt>{NefryFireBase.h}をincludeすることで使�
 もちろん、文字列以外にも図形を表示できます。@<tt>{NefryDisplay#drawString()}の代わりに、@<tt>{NefryDisplay#drawCircle()}や@<tt>{NefryDisplay#drawHorizontalLine()}などを使って図形を描くことができます。
 
 
-//image[display5][サンプルコード（@<tt>{NefryLibrary/display5}）の例][scale=0.8]{
+//image[display5][サンプルコード（NefryLibrary/display5）の例][scale=0.8]{
 //}
 
 
