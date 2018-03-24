@@ -1,6 +1,7 @@
 = Tips
 
 この章では、Nefry BTに関するTipsをいくつか挙げてみます。
+
 == Nefry BTについて
 
 === Nefry BTを初期状態に戻したい
@@ -12,6 +13,14 @@
 Nefry BTのUSBシリアル変換チップ（FTDI）のドライバーがPCにインストールされていない場合は、FTDIのページ（@<href>{http://www.ftdichip.com/Drivers/VCP.htm}）からドライバーをダウンロードしてインストールしてみて下さい。
 
 それでもNefry BTを認識できなかったり、何らかの理由でPCに接続できない場合は、Nefry BTのWebコンソールからプログラムを書き込んだり、シリアルモニタを確認できたりしますので、そちらもご利用下さい。
+
+
+=== Nefry BTへの書き込みが失敗する
+
+ツール＞Upload Speedを115200に変更して（書き込み速度を遅くして）、再度書き込むと成功することもあります。
+
+また、エラーメッセージに「A fatal error occurred: Failed to connect to ESP32: Timed out waiting for packet header」と表示されたときは、FTDIのドライバーを入れ直すことで、書き込めるようになることがあります。くわしくは、こちらの記事（@<href>{http://relativelayout.hatenablog.com/entry/2017/09/01/223718}
+）を御覧ください。
 
 === ディスプレイがつかない
 
