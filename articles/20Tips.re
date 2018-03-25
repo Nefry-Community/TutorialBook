@@ -19,7 +19,7 @@ Nefry BTのUSBシリアル変換チップ（FTDI）のドライバーがPCにイ
 
 ツール＞Upload Speedを115200に変更して（書き込み速度を遅くして）、再度書き込むと成功することもあります。
 
-また、エラーメッセージに「A fatal error occurred: Failed to connect to ESP32: Timed out waiting for packet header」と表示されたときは、FTDIのドライバーを入れ直すことで、書き込めるようになることがあります。くわしくは、こちらの記事（@<href>{http://relativelayout.hatenablog.com/entry/2017/09/01/223718}
+また、Macをお使いで、エラーメッセージに「A fatal error occurred: Failed to connect to ESP32: Timed out waiting for packet header」と表示されたときは、FTDIのドライバーを入れ直すことで、書き込めるようになることがあります。くわしくは、こちらの記事（@<href>{http://relativelayout.hatenablog.com/entry/2017/09/01/223718}
 ）を御覧ください。
 
 === ディスプレイがつかない
