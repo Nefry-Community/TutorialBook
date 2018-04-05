@@ -10,7 +10,7 @@ GPIOとはデジタル信号を出し入れする仕組みのことです。GPIO
 
 
 
-事前に、Nefry BTに組み込まれているフルカラーLEDを利用したLチカを @<href>{/docs/03DefaultLed,こちらのドキュメント} を参照して試してみましょう。
+事前に、Nefry BTに組み込まれているフルカラーLEDを利用したLチカを@<chap>{03DefaultLed}を参照して試してみましょう。
 
 
 == Nefry BTのGPIOの位置
