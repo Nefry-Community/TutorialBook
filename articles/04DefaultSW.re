@@ -1,93 +1,109 @@
 
-= NefryでSWを制御してみる
-
-== 追加章
-
-これから記事を作成します！！！
+= Nefryで標準スイッチを使ってみる
 
 
+この章では、Nefry BTに標準で取り付けられているスイッチの扱い方を紹介します。今回はスイッチを押したら前章の内蔵フルカラーLEDのカラーが変化する仕組みを試してみます。
 
-//comment{
-  コードの書き方を伝える章 そのに！ ＆入力体験
+
+== スイッチの位置
+
+
+今回扱うスイッチの位置を確認します。
+
+
+
+//image[04DefaultSW_01][今回あつかうスイッチの位置][scale=0.8]{
 //}
 
-//lead{
-このページではNefry BTでLEDを制御する方法を紹介します。
-Nefry BTをArduino IDEで開発するにあたり、前の章を見てセットアップを済ませておいてください。
-//}
-
-== Nefry BTをPCのUSBポートにさしてください。
- * Nefry BTをPCのUSBポートにさしてください。
- * メニューの@<tt>{ツール} > @<tt>{シリアルポート} > @<tt>{/dev/cu.usbserial-xxxxxx} を選択します。環境によっては @<tt>{/dev/tty.usbserial-xxxxxx}などの場合もあります。
 
 
 
-（Windowsだと表記が違うようです。 ）
+このようにUSB接続口に近いところに両サイドにスイッチがあるうちの、@<strong>{「SW」と刻印された方がスイッチ} です。「Reset」とある方はNefryを再起動するスイッチです。
+
+
+
+このSWと刻印されたスイッチ（以下「SWスイッチ」）の反応をプログラムで分かるようにして、スイッチを押すとフルカラーLEDのカラーが変化するようにします。
+
 
 == プログラムの書き込み
 
 
-メニューの@<tt>{ファイル} > @<tt>{新規ファイル}を選択します。
-
-
-
-次のようなウインドウが表示されます。
-
-
-//comment{
-image[ide01][コード書き込み前]{
+//image[04DefaultSW_02][次のコードに差し替えたウインドウ][scale=0.6]{
 //}
 
 
 
-初期状態で書かれている現状のコードを削除して、次のコードに差し替えましょう。
+
+このコードは https://github.com/Nefry-Community/TutorialExample/tree/master/examples にある、 04DefaultSW のサンプルからコピー＆ペーストすることが可能です。
 
 
-//emlist{
+=== コードの説明
+
+//emlist[][c]{
 #include <Nefry.h>
-//フルカラーLED　ランダムにカラーが変わります。
-#define SEED_PIN A0
 
 void setup() {
-  randomSeed(analogRead(SEED_PIN));
+  // SW有効化
+  Nefry.enableSW();
+  // LEDが白に光る（起動時の光り方）
+  Nefry.setLed(255, 255, 255);
 }
+//}
 
-int red,green,blue;
+
+@<tt>{Nefry.enableSW();} によってSW有効化、つまりSWスイッチを使うよという宣言をします。 起動したときにプログラムが動き出したことを示すため、@<tt>{Nefry.setLED(255, 255, 255)} でフルカラーLEDを白に光らせます。（R・G・Bが全て255だと白になります。）
+
+
+//emlist[][c]{
 void loop() {
-  red=random(255);//random関数は0-255の数値をランダムに返します。
-  green=random(255);
-  blue=random(255);
-  Nefry.setLed(red,green,blue);//LEDがランダムに点灯します。
-  String color="Red:";color+=red;
-  color+=" Green:";color+=green;
-  color+=" Blue:";color+=blue;
-  Nefry.ndelay(1000);//1秒待つ
+  // SWを押した時を判定する Nefry.readSW
+  if (Nefry.readSW()) {
+    // LEDが赤に光る
+    Nefry.setLed(255, 0, 0);
+    // 押されたら1秒待つ
+    Nefry.ndelay(1000);
+    // 青に戻る
+    Nefry.setLed(0, 0, 255);
+  }
 }
 //}
 
 
-@<tt>{A0}を指定していますが、乱数のSeed用に使っているだけで内蔵のLEDが@<tt>{A0}という訳ではないです。
-
-
-//comment{
-image[ide02][コード貼り付け後]{
-//}
+続いて、普段待っているときのループ部分の説明です。@<tt>{Nefry.readSW()} でSWスイッチの状態を取得することができます。
 
 
 
-== プログラムの保存とボードに書き込み
+@<strong>{ボタンを押したあとに離したタイミング} で @<tt>{Nefry.readSW()} が1を返すので「ボタンを押した」と判定できます。if @<tt>{(Nefry.readSW() == 1)}となりますが、プログラム内では1になること（true, falseのうちtrueなこと）を省略できるので if @<tt>{(Nefry.readSW())} で判定することができます。
 
-//comment{
-  手厚く書く
-//}
 
-左上の@<tt>{→}ボタンを押してボード（Nefry BT）にプログラムを書き込みます。
+
+そのときに、 @<tt>{Nefry.setLed(255, 0, 0);} LEDが赤に光らせ、 @<tt>{Nefry.ndelay(1000);} で1秒続いたあと、 @<tt>{Nefry.setLed(0, 0, 255);} 青に戻します。
 
 
 == 確認
 
 
-無事にプログラム書き込みが終わると、Nefry BTに内蔵してあるLEDがカラフルに光ります。
+実際に書き込んで確認してみましょう。
+
+
+
+//image[04DefaultSW_03][起動したときの動き][scale=0.8]{
+//}
+
+
+
+
+無事にプログラム書き込みが終わると、Nefry BTに内蔵してあるフルカラーLEDが起動時は白く光ります。
+
+
+
+//image[04DefaultSW_04][スイッチを押してすぐ離したときの動き][scale=0.8]{
+//}
+
+
+
+
+スイッチを押してすぐ離したときは赤に光ります。その後、待っていると青の点灯に戻ります。
 
 
 
