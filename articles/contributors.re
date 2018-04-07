@@ -7,10 +7,9 @@ Nefryのハードウエア＆ソフトウエアの開発者です。
 
 個人の活動で始めたNefryという存在がここまで大きくなって感謝の気持ちでいっぱいです！皆さんこれからもよろしくお願いします。
 
-==== @<chap>{00start} @<chap>{02NefryProgram} ちゃんとく / @tokutoku393
+====  @<chap>{00start}  @<chap>{03DefaultLed}  @<chap>{04DefaultSW} @<chap>{05DigitalLed}  @<chap>{06SerialPlotter}  1ft-seabass / @1ft-seabass
 
-Webの人。電気風呂での失敗が転じて初心者に優しい電子工作を広める道へ。はんだづけが好き。
-
+普段はフリーランスのWebフロントエンジニア。インターフェースを作りやすいNefry BTを使ってIoTやMixed Realityへの接続を日々試みている。ウォンバットが好き。
 
 ==== @<chap>{02ArduinoSetting} @<chap>{19Library} @<chap>{20Tips} ポキオ / @pokiiio
 
@@ -18,6 +17,6 @@ Androidエンジニアだけどマイコンボードが大好き。Nefry BTを�
 
 @<b>{京急は神。}
 
-==== @<chap>{03DefaultLed}  @<chap>{04DefaultSW} @<chap>{05DigitalLed}  @<chap>{06SerialPlotter}  1ft-seabass / @1ft-seabass
+====　@<chap>{02NefryProgram} 編集 ちゃんとく / @tokutoku393
 
-普段はフリーランスのWebフロントエンジニア。インターフェースを作りやすいNefry BTを使ってIoTやMixed Realityへの接続を日々試みている。ウォンバットが好き。
+Webの人。電気風呂での失敗が転じて初心者に優しい電子工作を広める道へ。はんだづけが好き。
