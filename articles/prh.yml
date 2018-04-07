@@ -8,6 +8,10 @@ imports:
   - ../prh-rules/media/techbooster.yml
 
 rules:
+
+  - expected: ハードウエア
+    pattern: ハードウェア
+    prh: ハードウエアと表記を統一します。
   - expected: Grove
     pattern:  grove
     prh: Groveと表記を統一します。
