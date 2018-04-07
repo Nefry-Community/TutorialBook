@@ -8,6 +8,9 @@ imports:
   - ../prh-rules/media/techbooster.yml
 
 rules:
+  - expected: Grove
+    pattern:  grove
+    prh: Groveと表記を統一します。
   - expected: Nefry BT
     pattern:  NefryBT
     prh: Nefry BTと表記を統一します。
