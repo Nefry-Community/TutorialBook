@@ -18,7 +18,7 @@ Nefry BTをPCのUSBポートにさしてください。Arduino IDEでシリア�
 メニューの @<tt>{ツール} > @<tt>{シリアルポート} > @<tt>{/dev/cu.usbserial-xxxxxx} を選択します。環境によっては @<tt>{/dev/tty.usbserial-xxxxxx} などの場合もあります。
 
  * Windowsの場合
-メニューの @<tt>{ツール} > @<tt>{シリアルポート} > @<tt>{COMxx} （xxの部分はNefryBTが挿してあるCOMポート） を選択します。
+メニューの @<tt>{ツール} > @<tt>{シリアルポート} > @<tt>{COMxx} （xxの部分はNefry BTが挿してあるCOMポート） を選択します。
 
 === プログラムを書き込む
 次のようなウインドウが表示されます。
