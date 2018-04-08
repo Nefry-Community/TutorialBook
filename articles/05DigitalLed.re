@@ -91,7 +91,7 @@ Nefry BTの製造バージョンによってはA1ピンソケットとGNDピン�
 
 === コードの説明
 
-//emlist[][c]{
+//emlist{
 // LEDを光らせるアナログピン番号
 #define LED_PIN A1
 // 待ち時間（ミリ秒） 1000ミリ秒 = 1秒
@@ -99,18 +99,20 @@ Nefry BTの製造バージョンによってはA1ピンソケットとGNDピン�
 //}
 
 
-まずはじめに、 @<tt>{#define LED_PIN A1} で準備しておきます。 @<tt>{#define} は定義した文字列を定数や式などで置き換えるよという書き方です。この場合、「LED_PINという文字列はA1という定数で置き換えるよ」という働きをしています。このあと、LEDを光らせるためのアナログピン番号として使います。
+まずはじめに、 @<code>{#define LED_PIN A1} で準備しておきます。 @<code>{#define} は定義した文字列を定数や式などで置き換えるよという書き方です。
+この場合、「LED_PINという文字列はA1という定数で置き換えるよ」という働きをしています。このあと、LEDを光らせるためのアナログピン番号として使います。
 
 
 
-A1という記述は変数（値の箱）ですが、中身にはアナログピン番号の数字が決まっている定数です。Nefry側であらかじめA1は○○番ピンと事前に準備していて、私たちが準備せずともすぐに使用できます。
+A1という記述は変数（値の箱）ですが、中身にはアナログピン番号の数字が決まっている定数です。
+Nefry側であらかじめA1は○○番ピンと事前に準備していて、私たちが準備せずともすぐに使用できます。
 
 
 
-@<tt>{#define DELAY_TIME 1000} はこの場合、「DELAY_TIMEという文字列は1000という数字で置き換えるよ」という働きをしています。このあと、この値は待ち時間として使います。
+@<code>{#define DELAY_TIME 1000} はこの場合、「DELAY_TIMEという文字列は1000という数字で置き換えるよ」という働きをしています。このあと、この値は待ち時間として使います。
 
 
-//emlist[][c]{
+//emlist{
 void setup() {
   // LEDを光らせるピンを出力に指定
   pinMode(LED_PIN, OUTPUT);
@@ -118,10 +120,11 @@ void setup() {
 //}
 
 
-setupでは起動時の処理としてGPIOとしての電気信号がどう出入りするかの指示を出します。  @<tt>{pinMode(LED_PIN, OUTPUT);} によって、LED_PINつまりA1ピンソケットは、電気信号が出力されるように動作します。
+setupでは起動時の処理としてGPIOとしての電気信号がどう出入りするかの指示を出します。
+@<code>{pinMode(LED_PIN, OUTPUT);} によって、LED_PINつまりA1ピンソケットは、電気信号が出力されるように動作します。
 
 
-//emlist[][c]{
+//emlist{
 void loop() {
   // LEDを光らせるピンにデジタル出力の HIGH = ON を指示
   digitalWrite(LED_PIN, HIGH);
@@ -135,11 +138,13 @@ void loop() {
 //}
 
 
-繰り返し動作するloop部分では @<tt>{digitalWrite(LED_PIN, HIGH);} によって、LEDを光らせるピンにデジタル出力の HIGH = ON を指示しています。 @<tt>{delay(DELAY_TIME);} によって、DELAY_TIME の時間つまり今回は1秒だけ待ちます。
+繰り返し動作するloop部分では @<code>{digitalWrite(LED_PIN, HIGH);} によって、LEDを光らせるピンにデジタル出力の HIGH = ON を指示しています。
+ @<code>{delay(DELAY_TIME);} によって、DELAY_TIME の時間つまり今回は1秒だけ待ちます。
 
 
 
-続いて、 @<tt>{digitalWrite(LED_PIN, LOW);} によって、LEDを光らせるピンにデジタル出力の LOW = OFF を指示しています。その後、ONのときと同様に @<tt>{delay(DELAY_TIME);} によって、1秒待ったあと繰り返します。
+続いて、 @<code>{digitalWrite(LED_PIN, LOW);} によって、LEDを光らせるピンにデジタル出力の LOW = OFF を指示しています。
+その後、ONのときと同様に @<code>{delay(DELAY_TIME);} によって、1秒待ったあと繰り返します。
 
 
 

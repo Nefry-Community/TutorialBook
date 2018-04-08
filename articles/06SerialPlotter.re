@@ -17,11 +17,13 @@
 
 
 
-たとえば、 このようにNefry BTからコンピュータに数字の10をシリアル通信で送る場合、 @<tt>{Serial.println(10);} を書きます。これを受け取ったコンピュータ側は、USB経由のシリアル通信を行い、数字の10を受け取ります。
+たとえば、 このようにNefry BTからコンピュータに数字の10をシリアル通信で送る場合、 @<code>{Serial.println(10);} を書きます。
+これを受け取ったコンピュータ側は、USB経由のシリアル通信を行い、数字の10を受け取ります。
 
 
 
-前半の @<tt>{Serial} の部分はシリアル通信をするクラス（この場合、シリアル通信するプログラムが集まったもの）で、そこから、改行付きでデータを送るのが @<tt>{println} です。今回は10という数字を送るので @<tt>{println(10)} となります。
+前半の @<code>{Serial} の部分はシリアル通信をするクラス（この場合、シリアル通信するプログラムが集まったもの）で、そこから、改行付きでデータを送るのが @<code>{println} です。
+今回は10という数字を送るので @<code>{println(10)} となります。
 
 
 
@@ -47,7 +49,8 @@
 == Nefry BT の準備
 
 
-Nefry BT の準備です。USBを差し込み、@<href>{02ArduinoSetting,Arduino設定} を参考にして差し込まれたポートをチェックして、シリアルモニタ・シリアルプロッタがNefry BTからくるデータを待ち構えられるようにしておきましょう。
+Nefry BT の準備です。
+USBを差し込み、@<href>{02ArduinoSetting,Arduino設定} を参考にして差し込まれたポートをチェックして、シリアルモニタ・シリアルプロッタがNefry BTからくるデータを待ち構えられるようにしておきましょう。
 
 
 
@@ -74,7 +77,7 @@ Nefry BT の準備です。USBを差し込み、@<href>{02ArduinoSetting,Arduino
 
 == コードの説明
 
-//emlist[][c]{
+//emlist{
 #include <Nefry.h>
 
 void setup() {
@@ -86,10 +89,10 @@ void setup() {
 //}
 
 
-@<tt>{#include <Nefry.h>} は、いままでのとおり、Nefryライブラリの準備です。SW有効化、起動時に白く光るように設定しています。
+@<code>{#include <Nefry.h>} は、いままでのとおり、Nefryライブラリの準備です。SW有効化、起動時に白く光るように設定しています。
 
 
-//emlist[][c]{
+//emlist{
 void loop() {
   // SWを押した時を判定する Nefry.readSW
   if (Nefry.readSW()) {
@@ -107,10 +110,10 @@ void loop() {
 //}
 
 
-繰り返し動作するloop部分では、 @<href>{04DefaultLed,デフォルトのフルカラーLED} の処理に加えて、今回はSWを押した時に @<tt>{Serial.println(10);} PCに対してシリアル通信で10という数字を送っています。
+繰り返し動作するloop部分では、 @<href>{04DefaultLed,デフォルトのフルカラーLED} の処理に加えて、今回はSWを押した時に @<code>{Serial.println(10);} PCに対してシリアル通信で10という数字を送っています。
 
 
-//emlist[][c]{
+//emlist{
   // 通常時は0を知らせ続ける
   Serial.println(0);
 }

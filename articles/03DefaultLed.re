@@ -35,15 +35,15 @@ Nefry BTをArduino IDEで開発するにあたり、前の章を見てセット�
 コードの説明をします。
 
 
-//emlist[][c]{
+//emlist{
 #include <Nefry.h>
 //}
 
 
-まず、 @<tt>{#include <Nefry.h>} によってNefry向けのライブラリを読み込んでいます。今回のフルカラーLEDの制御も含めていろいろな機能を使えるようになります。
+まず、 @<code>{#include <Nefry.h>} によってNefry向けのライブラリを読み込んでいます。今回のフルカラーLEDの制御も含めていろいろな機能を使えるようになります。
 
 
-//emlist[][c]{
+//emlist{
 void setup() {
 
 }
@@ -63,10 +63,10 @@ int red,green,blue;
 
 
 
-まず、Nefryでは @<tt>{Nefry.setLED(R, G, B)} という関数でRGB（赤・青・緑）要素をそれぞれ指定できるので、@<tt>{int red, green, blue;} でそれぞれを入れる値の箱を作ります。
+まず、Nefryでは @<code>{Nefry.setLED(R, G, B)} という関数でRGB（赤・青・緑）要素をそれぞれ指定できるので、@<code>{int red, green, blue;} でそれぞれを入れる値の箱を作ります。
 
 
-//emlist[][c]{
+//emlist{
 void loop() {
   // random関数は0-255の数値をランダムに返します
 
@@ -86,7 +86,7 @@ void loop() {
 このあと、フルカラーLEDの色を実際に指定するために、フルカラーLEDの赤要素なら redという名前の値の箱（変数）、変数 green ならフルカラーLEDの緑要素を、変数 blue ならフルカラーLEDの青要素を入れています。
 
 
-//emlist[][c]{
+//emlist{
   // LEDがランダムに点灯します
   Nefry.setLed(red,green,blue);
 
@@ -100,11 +100,11 @@ void loop() {
 
 
 
-先ほどの red  , green , blue を @<tt>{Nefry.setLed(red,green,blue);} という記述で指示するとフルカラーLEDのカラーが変更されます。
+先ほどの red  , green , blue を @<code>{Nefry.setLed(red,green,blue);} という記述で指示するとフルカラーLEDのカラーが変更されます。
 
 
 
-最後に @<tt>{Nefry.ndelay(1000);} で1秒プログラムを待つことができるので、繰り返し動作する loop は1秒ごとに動作する仕組みで電源をOFFにするまで動きつづけます。
+最後に @<code>{Nefry.ndelay(1000);} で1秒プログラムを待つことができるので、繰り返し動作する loop は1秒ごとに動作する仕組みで電源をOFFにするまで動きつづけます。
 
 
 == 確認

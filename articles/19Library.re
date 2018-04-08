@@ -12,14 +12,14 @@ Ambient（@<href>{https://ambidata.io/}）は、主にマイコンボードな�
 //image[ambient_top][Ambientのホームページ][scale=0.8]{
 //}
 
-Ambientライブラリは、@<tt>{NefryAmbient.h}をincludeすることで使えるようになります。
+Ambientライブラリは、@<code>{NefryAmbient.h}をincludeすることで使えるようになります。
 
-@<tt>{begin()}関数で、データを送信したいチャネルのIDとライトキーを設定します。
-その後@<tt>{set()}でデータを詰めて@<tt>{send()}を呼ぶことでデータをAmbientに送信できます。
+@<code>{begin()}関数で、データを送信したいチャネルのIDとライトキーを設定します。
+その後@<code>{set()}でデータを詰めて@<code>{send()}を呼ぶことでデータをAmbientに送信できます。
 
 サンプルコードでは、A0ピンのアナログ入力値を読み取り、Ambientに送信しています。
 
-@<tt>{begin()}関数で必要になる、チャネルIDとライトキーは「Myチャネル」から確認できます。
+@<code>{begin()}関数で必要になる、チャネルIDとライトキーは「Myチャネル」から確認できます。
 
 //image[ambient_detail][Myチャネル][scale=0.8]{
 //}
@@ -34,14 +34,14 @@ IoT Hub（@<href>{https://azure.microsoft.com/ja-jp/services/iot-hub/}）とは�
 //image[azureiothub_top][Microsoft Azure IoT Hubホームページ][scale=0.8]{
 //}
 
-IoT Hubライブラリは、@<tt>{NefryAzureIoTHub.h}をincludeすることで使えるようになります
+IoT Hubライブラリは、@<code>{NefryAzureIoTHub.h}をincludeすることで使えるようになります
 
-@<tt>{begin()}関数で、接続文字列というIoT Hub用のアクセスキーを設定し、@<tt>{setCallback()}関数でIoT Hubからのメッセージを受け取る関数の設定を行っています。
-データをIoT Hubに送信するときは、@<tt>{connect()}関数で接続してから、@<tt>{DataElement}インスタンスに送信したい値を詰めて、@<tt>{push()}関数で送信します。
+@<code>{begin()}関数で、接続文字列というIoT Hub用のアクセスキーを設定し、@<code>{setCallback()}関数でIoT Hubからのメッセージを受け取る関数の設定を行っています。
+データをIoT Hubに送信するときは、@<code>{connect()}関数で接続してから、@<code>{DataElement}インスタンスに送信したい値を詰めて、@<code>{push()}関数で送信します。
 
 サンプルコードでは、A0ピンのアナログ入力値を読み取り、Azure IoT Hubに送信しています。
 
-@<tt>{begin()}関数で必要な接続文字列は、IoT Hub内のデバイスエクスプローラーを開き、登録したデバイスを選択すると次のような画面が表示され確認することができます。
+@<code>{begin()}関数で必要な接続文字列は、IoT Hub内のデバイスエクスプローラーを開き、登録したデバイスを選択すると次のような画面が表示され確認することができます。
 登録したデバイスごとに接続文字列が異なるので注意が必要です。
 
 //image[azureiothub_detail][デバイスエクスプローラー][scale=0.8]{
@@ -56,12 +56,12 @@ FASTSENSING（@<href>{https://fastsensing.com/ja/}）は、専用のデバイス
 
 FASTSENSINGライブラリは、@<tt>{NefryFastSensing.h}をincludeすることで使えるようになります
 
-@<tt>{begin()}関数で、データを送信したいデバイスと３つのチャンネルを設定します。
-その後@<tt>{setValue()}関数でデータを詰めて@<tt>{push()}関数を呼ぶことでデータをFASTSENSINGに送信できます。
+@<code>{begin()}関数で、データを送信したいデバイスと３つのチャンネルを設定します。
+その後@<code>{setValue()}関数でデータを詰めて@<code>{push()}関数を呼ぶことでデータをFASTSENSINGに送信できます。
 
 サンプルコードでは、A0ピンのアナログ入力値を読み取り、FASTSENSINGに送信しています。
 
-@<tt>{begin()}関数で必要なトークンは、FASTSENSINGのデバイスタブから@<tt>{開発用スタブデバイス}をクリックすると次のような画面が表示され確認することができます。
+@<code>{begin()}関数で必要なトークンは、FASTSENSINGのデバイスタブから@<tt>{開発用スタブデバイス}をクリックすると次のような画面が表示され確認することができます。
 //image[fastsensing_detail][スタブデバイスの詳細][scale=0.8]{
 //}
 
@@ -74,10 +74,10 @@ ThingSpeak（@<href>{https://thingspeak.com/}）は、マイコンなどから�
 
 ThingSpeakはチャネルを作ると1つのチャネルにつき最大8つデータを別々にアップロードすることができます。
 
-ThingSpeakライブラリは、@<tt>{NefryThingSpeak.h}をincludeすることで使えるようになります
+ThingSpeakライブラリは、@<code>{NefryThingSpeak.h}をincludeすることで使えるようになります
 
-@<tt>{begin()}関数で、チャンネルIDを設定し、@<tt>{setWriteAPIKey()}関数でライトAPIキーの設定します。
-その後@<tt>{writeField()}関数を呼ぶことでデータをThingSpeakに送信できます。
+@<code>{begin()}関数で、チャンネルIDを設定し、@<code>{setWriteAPIKey()}関数でライトAPIキーの設定します。
+その後@<code>{writeField()}関数を呼ぶことでデータをThingSpeakに送信できます。
 
 サンプルコードでは、A0ピンのアナログ入力値を読み取り、ThingSpeakに送信しています。
 
@@ -94,11 +94,11 @@ Firebase（@<href>{https://firebase.google.com/?hl=ja}）は、モバイルと�
 //image[firebase_top][Firebaseのホームページ][scale=0.7]{
 //}
 
-Firebaseライブラリは、@<tt>{NefryFireBase.h}をincludeすることで使えるようになります
+Firebaseライブラリは、@<code>{NefryFireBase.h}をincludeすることで使えるようになります
 
-@<tt>{begin()}関数で、ホスト名とシークレットキーを設定します。
+@<code>{begin()}関数で、ホスト名とシークレットキーを設定します。
 
-データをFirebaseに送信するときは、@<tt>{DataElement}インスタンスに送信したい値を詰めて、@<tt>{write()}関数で送信します。
+データをFirebaseに送信するときは、@<code>{DataElement}インスタンスに送信したい値を詰めて、@<code>{write()}関数で送信します。
 
 サンプルコードでは、A0ピンのアナログ入力値を読み取り、Firebaseに送信しています。
 
@@ -116,12 +116,12 @@ Firebaseライブラリは、@<tt>{NefryFireBase.h}をincludeすることで使�
 
 == ティスプレイ（Nefry_Display）
 
-ティスプレイライブラリは、@<tt>{NefryDisplay.h}をincludeすることで使えるようになります。
+ティスプレイライブラリは、@<code>{NefryDisplay.h}をincludeすることで使えるようになります。
 
 === 簡単な使い方
 
 
-たとえば、@<tt>{NefryDisplay#print()}を使うと、簡単にディスプレイに好きな文字列を表示することができます。
+たとえば、@<code>{NefryDisplay#print()}を使うと、簡単にディスプレイに好きな文字列を表示することができます。
 
 
 //image[display1][サンプルコード（NefryLibrary/display1）の例][scale=0.8]{
@@ -130,7 +130,7 @@ Firebaseライブラリは、@<tt>{NefryFireBase.h}をincludeすることで使�
 
 
 
-もし@<tt>{NefryDisplay#print()}に、ディスプレイの横幅より長い文字列を入力しても、自動でスクロール表示してくれます。
+もし@<code>{NefryDisplay#print()}に、ディスプレイの横幅より長い文字列を入力しても、自動でスクロール表示してくれます。
 
 
 
@@ -153,17 +153,17 @@ Firebaseライブラリは、@<tt>{NefryFireBase.h}をincludeすることで使�
 
 
 
-このように、@<tt>{NefryDisplay#print()}は非常に便利な関数です。実行中のプログラムのログを表示したり、表示した文字列が3行より少ない場合にお勧めです。
+このように、@<code>{NefryDisplay#print()}は非常に便利な関数です。実行中のプログラムのログを表示したり、表示した文字列が3行より少ない場合にお勧めです。
 
 
 === 高度な使い方
 
 
-もう少し、凝った表示をしたいときは、@<tt>{NefryDisplay#autoScrollFunc()}で表示したい要素を記述した関数を渡す方法があります。
+もう少し、凝った表示をしたいときは、@<code>{NefryDisplay#autoScrollFunc()}で表示したい要素を記述した関数を渡す方法があります。
 
 
 
-たとえば、好きな位置に文字列を表示させたいときは、@<tt>{NefryDisplay#drawString()}を使って関数を記述し、その関数を@<tt>{NefryDisplay#autoScrollFunc()}に渡します。
+たとえば、好きな位置に文字列を表示させたいときは、@<code>{NefryDisplay#drawString()}を使って関数を記述し、その関数を@<code>{NefryDisplay#autoScrollFunc()}に渡します。
 
 
 //image[display4][サンプルコード（NefryLibrary/display4）の例][scale=0.8]{
@@ -172,11 +172,13 @@ Firebaseライブラリは、@<tt>{NefryFireBase.h}をincludeすることで使�
 
 
 
-このように、「POKIO」という文字を好きな位置に配置できました。@<tt>{NefryDisplay#autoScrollFunc()}を使う場合は@<tt>{Nefry PrintDialog}という固定で表示される文字列もないので、ディスプレイ全体をフルに使うことができます。
+このように、「POKIO」という文字を好きな位置に配置できました。
+@<code>{NefryDisplay#autoScrollFunc()}を使う場合は@<tt>{Nefry PrintDialog}という固定で表示される文字列もないので、ディスプレイ全体をフルに使うことができます。
 
 
 
-もちろん、文字列以外にも図形を表示できます。@<tt>{NefryDisplay#drawString()}の代わりに、@<tt>{NefryDisplay#drawCircle()}や@<tt>{NefryDisplay#drawHorizontalLine()}などを使って図形を描くことができます。
+もちろん、文字列以外にも図形を表示できます。
+@<code>{NefryDisplay#drawString()}の代わりに、@<code>{NefryDisplay#drawCircle()}や@<code>{NefryDisplay#drawHorizontalLine()}などを使って図形を描くことができます。
 
 
 //image[display5][サンプルコード（NefryLibrary/display5）の例][scale=0.8]{

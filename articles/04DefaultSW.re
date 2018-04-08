@@ -39,7 +39,7 @@
 
 === コードの説明
 
-//emlist[][c]{
+//emlist{
 #include <Nefry.h>
 
 void setup() {
@@ -51,10 +51,11 @@ void setup() {
 //}
 
 
-@<tt>{Nefry.enableSW();} によってSW有効化、つまりSWスイッチを使うよという宣言をします。 起動したときにプログラムが動き出したことを示すため、@<tt>{Nefry.setLED(255, 255, 255)} でフルカラーLEDを白に光らせます。（R・G・Bが全て255だと白になります。）
+@<code>{Nefry.enableSW();} によってSW有効化、つまりSWスイッチを使うよという宣言をします。
+起動したときにプログラムが動き出したことを示すため、@<code>{Nefry.setLED(255, 255, 255)} でフルカラーLEDを白に光らせます。（R・G・Bが全て255だと白になります。）
 
 
-//emlist[][c]{
+//emlist{
 void loop() {
   // SWを押した時を判定する Nefry.readSW
   if (Nefry.readSW()) {
@@ -69,15 +70,17 @@ void loop() {
 //}
 
 
-続いて、普段待っているときのループ部分の説明です。@<tt>{Nefry.readSW()} でSWスイッチの状態を取得することができます。
+続いて、普段待っているときのループ部分の説明です。
+@<code>{Nefry.readSW()} でSWスイッチの状態を取得することができます。
 
 
 
-@<strong>{ボタンを押したあとに離したタイミング} で @<tt>{Nefry.readSW()} が1を返すので「ボタンを押した」と判定できます。if @<tt>{(Nefry.readSW() == 1)}となりますが、プログラム内では1になること（true, falseのうちtrueなこと）を省略できるので if @<tt>{(Nefry.readSW())} で判定することができます。
+@<strong>{ボタンを押したあとに離したタイミング} で @<code>{Nefry.readSW()} が1を返すので「ボタンを押した」と判定できます。
+ @<code>{if(Nefry.readSW() == 1)}となりますが、プログラム内では1になること（true, falseのうちtrueなこと）を省略できるので @<code>{if(Nefry.readSW())} で判定することができます。
 
 
 
-そのときに、 @<tt>{Nefry.setLed(255, 0, 0);} LEDが赤に光らせ、 @<tt>{Nefry.ndelay(1000);} で1秒続いたあと、 @<tt>{Nefry.setLed(0, 0, 255);} 青に戻します。
+そのときに、 @<code>{Nefry.setLed(255, 0, 0);} LEDが赤に光らせ、 @<code>{Nefry.ndelay(1000);} で1秒続いたあと、 @<code>{Nefry.setLed(0, 0, 255);} 青に戻します。
 
 
 == 確認
