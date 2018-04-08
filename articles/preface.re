@@ -55,7 +55,7 @@ NefryLibrary 1.2.1 以上の場合、サンプルプログラムがあらかじ�
 
 「ファイル」→「スケッチ例」→「Nefry　TutorialBook　Example」から必要なものを選んでクリックしてください。
 
-//image[sample][サンプルプログラムの座標][scale=0.7]{
+//image[sample][サンプルプログラムの座標][scale=0.6]{
 //}
 
  * NefryLibrary 1.2.1未満の場合
