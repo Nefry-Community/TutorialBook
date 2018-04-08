@@ -71,7 +71,8 @@ LINE Notifyとは色々なサービスからLINEにメッセージを送るサ�
         }
       }
       if (!LineAuth.equals("")) {
-        if (SendMessageLINE.equals(""))SendMessageLINE = "Welcome to the NefryBT world!";
+        if (SendMessageLINE.equals(""))
+          SendMessageLINE = "Welcome to the NefryBT world!";
         LineNotify.send(LineAuth,SendMessageLINE);        //LINE送信
       }
       delay(1000);               //送信後1秒間待つ
@@ -81,7 +82,7 @@ LINE Notifyとは色々なサービスからLINEにメッセージを送るサ�
   }
 //}
 
-===　プログラム解説
+=== プログラム解説
 
 ここではデフォルトプログラムがどのように作られているのか簡単に紹介していきます。
 上のプログラムがどのような意味があるのか気になる場合はこちらをご覧ください。
@@ -118,7 +119,7 @@ Nefry.setProgramName("NefryBT Default Program");//プログラム名登録
 @<code>{Nefry.enableSW()} 関数でNefryについているスイッチをいつ押されても大丈夫なように常時確認するようにします。
 
 @<code>{Nefry.setProgramName} 関数でプログラム名を登録することができます。
-もちろん登録しなくても大丈夫ですが、このプログラムがなにをするものなのかを確認することができ、便利ので入力しておきます。
+もちろん登録しなくても大丈夫ですが、このプログラムがなにをするものなのかを確認することができ、便利なので入力しておきます。
 
 
 //emlist{
@@ -130,7 +131,8 @@ void loop() {
       }
     }
     if (!LineAuth.equals("")) {
-      if (SendMessageLINE.equals(""))SendMessageLINE = "Welcome to the NefryBT world!";
+      if (SendMessageLINE.equals(""))
+        SendMessageLINE = "Welcome to the NefryBT world!";
       LineNotify.send(LineAuth,SendMessageLINE);       //LINE送信
     }
     delay(1000);               //送信後1秒間待つ
@@ -153,10 +155,9 @@ void loop() {
 @<code>{if (!LineAuth.equals("")}ここでLINEと通信するときに必要となるトークンがDataStoreで入力されているかの判定を行います。入力されている場合にLINEの通信を行います。
 
 @<code>{if (SendMessageLINE.equals(""))}合わせて、LINEで送るメッセージがDataStoreで入力されているのかの判定を行い、入力がない場合に@<code>{SendMessageLINE = "Welcome to the NefryBT world!"}を実行してメッセージを挿入します。
-@<code>{LineNotify.send(LineAuth,SendMessageLINE)}最後にこの関数でLINEにメッセージを送信します。
 
-
-それぞれの処理がDataStoreの入力状態によって実行されるか実行されないか分かれます。
+@<code>{LineNotify.send(LineAuth,SendMessageLINE)}関数でLINEにメッセージを送信します。
 
 後は0.5秒ごとにLEDをランダムに光らせるようになっています。
-これがデフォルトプログラムといわれるプログラムの内容になります。
+
+以上がプログラムの全容になります。
