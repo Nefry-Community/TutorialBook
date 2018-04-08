@@ -152,7 +152,7 @@ void loop() {
 @<code>{if (!IFTTT.send(Event, SecretKey)) }ここでIFTTTと通信結果の判定を行い、通信ができなかった場合にLEDを赤く光らせる判定を行います。
 
  * LINE
-@<code>{if (!LineAuth.equals("")}ここでLINEと通信するときに必要となるトークンがDataStoreで入力されているかの判定を行います。入力されている場合にLINEの通信を行います。
+@<code>{if (!LineAuth.equals(""))}ここでLINEと通信するときに必要となるトークンがDataStoreで入力されているかの判定を行います。入力されている場合にLINEの通信を行います。
 
 @<code>{if (SendMessageLINE.equals(""))}合わせて、LINEで送るメッセージがDataStoreで入力されているのかの判定を行い、入力がない場合に@<code>{SendMessageLINE = "Welcome to the NefryBT world!"}を実行してメッセージを挿入します。
 
