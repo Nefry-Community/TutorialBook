@@ -24,7 +24,7 @@
 
  IoT体験編
 
- * IFTTT@<fn>{ifttt}を用いて簡単なIoTを体験します
+ * IFTTTを用いて簡単なIoTを体験します
  * LINE Notifyを使ってLINEにメッセージを送ります
 
 本書では、大きく２つの編に分けて話を進めていきます。
@@ -55,7 +55,7 @@ NefryLibrary 1.2.1 以上の場合、サンプルプログラムがあらかじ�
 
 「ファイル」→「スケッチ例」→「Nefry　TutorialBook　Example」から必要なものを選んでクリックしてください。
 
-//image[sample][サンプルプログラムの座標][scale=0.8]{
+//image[sample][サンプルプログラムの座標][scale=0.7]{
 //}
 
  * NefryLibrary 1.2.1未満の場合
@@ -92,4 +92,3 @@ Nefry BT（無印）との差を説明します。
 ===[/column]
 //footnote[arduino][イタリア生まれのハードウエアをソウトウエアとセットで簡単に触れるようにしたボード]
 //footnote[raspberry][イギリス生まれの小型PC、Linuxが動きハードウエアの制御もできるボード]
-//footnote[ifttt][たとえば、「もし金曜日ならゴミ捨てするようにメールを送る」といった指定の条件が起きた時に別のものを動かすことが簡単にできるWebサービス]
