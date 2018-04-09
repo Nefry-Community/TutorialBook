@@ -9,9 +9,9 @@ imports:
 
 rules:
 
-  - expected: ハードウエア
-    pattern: ハードウェア
-    prh: ハードウエアと表記を統一します。
+  - expected: ハードウェア
+    pattern: ハードウエア
+    prh: ハードウェアと表記を統一します。
   - expected: Grove
     pattern:  grove
     prh: Groveと表記を統一します。
