@@ -72,7 +72,7 @@ USBを差し込み、@<href>{02ArduinoSetting,Arduino設定} を参考にして�
 
 
 
-このコードは https://github.com/Nefry-Community/TutorialExample/tree/master/examples にある、 06SerialPlotter のサンプルからコピー＆ペーストすることが可能です。
+このコードは、Arduino IDE のメニューからファイル ＞ スケッチ例 に移動し Nefry TutorialBook Example ＞ SerialPlotter で呼び出すことができます。
 
 
 == コードの説明
@@ -190,4 +190,16 @@ void loop() {
 
 
 
-お疲れ様でした。
+== 試してみよう
+
+この章でシリアルモニタ・シリアルプロッタの使い方を確認できました。
+
+次のステップとして問題を2つほど出すのでぜひ試してみてください。
+
+ * Q1
+  ** ランダム関数を使って押したときの値をランダムにしてシリアルプロッタのグラフの動きを確認
+ * Q2
+ ** 押している時は0で押していない時は10と値を反転させるよう変更してシリアルプロッタのグラフの動きを確認
+
+解答例は、Nefry TutorialBook Example ＞ SerialPlotter Answer ＞ SerialPlotter_Q1・Q2 をご覧ください。
+

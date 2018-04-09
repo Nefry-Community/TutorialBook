@@ -26,7 +26,14 @@ Nefry BTをArduino IDEで開発するにあたり、前の章を見てセット�
 
 
 
-このコードは https://github.com/Nefry-Community/TutorialExample/tree/master/examples にある、 03DefaultLed のサンプルからコピー＆ペーストすることが可能です。
+このコードはスケッチ例から呼び出すことが可能です。
+
+
+//image[03DefaultLed_04][スケッチ例の操作][scale=0.6]{
+//}
+
+
+Arduino IDE のメニューからファイル ＞ スケッチ例 に移動し Nefry TutorialBook Example ＞ DefaultLed で呼び出すことができます。
 
 
 === コードの説明
@@ -124,4 +131,15 @@ void loop() {
 
 
 
-お疲れ様でした。
+== 試してみよう
+
+この章で内蔵フルカラーLEDを操作することができました。
+
+次のステップとして問題を2つほど出すのでぜひ試してみてください。
+
+ * Q1
+ ** 内蔵フルカラーLEDの光らせ方を現状の1秒からすごく早く200msecに変える
+ * Q2
+ ** 内蔵フルカラーLEDをカラーを青・赤・黄色とループで変えてみる
+
+解答例は、Nefry TutorialBook Example ＞ DefaultLed Answer ＞ DefaultLed_Q1・Q2をご覧ください。
