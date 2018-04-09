@@ -3,7 +3,7 @@
 
 この章では、Nefry BTのGPIOを使ってLEDを点滅させる仕組みを説明します。
 
-GPIO（General Purpose Input/Output）とは、デジタル信号を出し入れする仕組みのことです。GPIOを使うことで、さまざまなセンサに合わせたデジタル信号の読み取り（入力）ができたり、Nefry BTからデジタル信号を送り（出力）モーターを動かしたりLEDを光らせたりすることができます。
+GPIO（General Purpose Input/Output）とは、デジタル信号を出し入れする仕組みのことです。GPIOを使うことで、さまざまなセンサからデジタル信号の読み取り（入力）ができたり、Nefry BTからモーターやLEDにデジタル信号を送り（出力）動かしたり光らせたりすることができます。
 
 Nefry BTの内蔵フルカラーLEDを利用したLチカ@<fn>{lchika}は、@<chap>{03DefaultLed}を参照して試してみましょう。
 
