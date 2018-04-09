@@ -1,4 +1,4 @@
-= Arduino IDEのセットアップ
+= Arduino IDEをセットアップしよう
 //comment{
 環境構築
 //}
