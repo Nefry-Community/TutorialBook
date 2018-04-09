@@ -31,7 +31,7 @@ LINE Notifyを使うと、色々なサービスからLINEにメッセージを�
 
 @<chap>{11NefryWiFi}を参考にして設定画面を開くと、画像の赤で囲われた部分にプログラム名が表示されます。
 
-//image[linenotify][書き込まれているプログラム名の確認][scale=0.8]{
+//image[program][書き込まれているプログラム名の確認][scale=0.8]{
 //}
 デフォルトプログラムの場合、「Nefry BT Default Program」と表示されていますのでそれを見て確認してください。
 
