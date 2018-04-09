@@ -70,7 +70,7 @@ Nefry BT R2 に差し込んだ状態です。これでLEDの準備は完了で�
 
 
 
-Nefry BTの製造バージョンによってはA1ピンソケットとGNDピンソケットの刻印位置が違うかもしれませんが、刻印にしたがってとりつけてください。
+Nefry BTの製造バージョンによってはA1ピンソケットの刻印位置が違うかもしれませんが、刻印にしたがってとりつけてください。
 
 
 == プログラムの書き込み
@@ -86,7 +86,7 @@ Nefry BTの製造バージョンによってはA1ピンソケットとGNDピン�
 
 
 
-このコードは https://github.com/Nefry-Community/TutorialExample/tree/master/examples にある、 05DigitalLed のサンプルからコピー＆ペーストすることが可能です。
+このコードは、Arduino IDE のメニューからファイル ＞ スケッチ例 に移動し Nefry TutorialBook Example ＞ DigitalLed で呼び出すことができます。
 
 
 === コードの説明
@@ -168,4 +168,15 @@ void loop() {
 
 
 
-お疲れ様でした。
+== 試してみよう
+
+この章でGPIOピンによるLEDを点灯させることができました。
+
+次のステップとして問題を2つほど出すのでぜひ試してみてください。
+
+ * Q1
+ ** LEDの点滅する間隔をランダムにする
+ * Q2
+ ** 2つのGPIOピンを使ってLEDを2つ光らせる
+
+解答例は、Nefry TutorialBook Example ＞ DigitalLed Answer ＞ DigitalLed_Q1・Q2をご覧ください。

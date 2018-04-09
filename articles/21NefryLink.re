@@ -31,7 +31,7 @@ Nefry用のディスプレイを購入できるサイトや店舗を紹介しま
   * @<href>{https://dotstud.io/shop/nefry-bt-display/,dotstudio株式会社 Nefry BT用ディスプレイ購入ページ}（@<href>{https://dotstud.io/shop/nefry-bt-display/}）
 
 == Nefryの作例情報
-I
+
 Nefryを活用した例がご覧になれます。参考にして自分でも作ってみませんか？
 
  * @<href>{https://qiita.com/tags/nefry,QiitaのNefryタグ}（@<href>{https://qiita.com/tags/nefry}）
