@@ -34,7 +34,7 @@
 
 
 
-このコードは https://github.com/Nefry-Community/TutorialExample/tree/master/examples にある、 04DefaultSW のサンプルからコピー＆ペーストすることが可能です。
+このコードは、Arduino IDE のメニューからファイル ＞ スケッチ例 に移動し Nefry TutorialBook Example ＞ DefaultSW で呼び出すことができます。
 
 
 === コードの説明
@@ -110,4 +110,15 @@ void loop() {
 
 
 
-お疲れ様でした。
+== 試してみよう
+
+この章で標準スイッチを操作することができました。
+
+次のステップとして問題を2つほど出すのでぜひ試してみてください。
+
+ * Q1
+ ** 標準スイッチの押す回数によって光る回数が増えていく
+ * Q2
+ ** 一度標準スイッチを押したら内蔵LEDが点灯し、もう一度押すと消える仕組みにする
+
+解答例は、Nefry TutorialBook Example ＞ DefaultSW Answer ＞ DefaultSW_Q1・Q2をご覧ください。
