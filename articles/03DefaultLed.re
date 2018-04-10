@@ -18,7 +18,7 @@ NefryLibraryのバージョンが1.2.1以上の場合、Arduino IDE のメニュ
 
 もし見当たらない場合、@<title>{preface} のサンプルプログラムの項目を参考にプログラムを導入してください。
 
-//image[03DefaultLed_02][プログラムを開いたArduino IDE][scale=0.6]{
+//image[03DefaultLed_02][ランダムな色を光らせるプログラム][scale=0.6]{
 //}
 
 Nefry BTの内臓LEDを一秒ごとに光らせるコードになります。
