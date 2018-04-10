@@ -3,14 +3,14 @@
 この章からは、Nefry BTにデフォルトで書き込まれているプログラムでIoTを体験していきます。Nefry BTで、どのようなことができるのか掴むことができるはずです！
 
 == どんなことが体験できるの？
-まず@<chap>{10DefaultProgram}では、デフォルトプログラムでどのようなことが体験できるのかと、プログラムの内容を解説します。@<chap>{11NefryWiFi}からは、実際に体験する手順を紹介します。
+この賞では、デフォルトプログラムでどのようなことが体験できるのかと、プログラムの内容を解説します。@<chap>{11NefryWiFi}からは、実際に体験する手順を紹介します。
 
 デフォルトプログラムでは、2つのサービスを使ったIoT体験ができます。
 
 === IFTTT
 IFTTTというWebサービスを橋渡しに、FacebookやGMail、Twitterなど、300以上のさまざまなサービスとNefry BTを連携することができます。
 
-//image[ifttt][IFTTT公式サイト][scale=0.7]{
+//image[ifttt][IFTTT公式サイト][scale=0.5]{
 //}
 IFTTTを使うとプログラミングなしで多種多様な連携ができるようになるので、今回に限らず非常にオススメのサービスです。
 
@@ -19,7 +19,7 @@ IFTTTを使うとプログラミングなしで多種多様な連携ができる
 === LINE Notify
 LINE Notifyを使うと、色々なサービスからLINEにメッセージを送ることができます。
 
-//image[linenotify][LINE Notify][scale=0.8]{
+//image[linenotify][LINE Notify][scale=0.6]{
 //}
 手軽に個人やグループにLINEのメッセージを送れるため、IoTとの相性もバッチリです。
 
@@ -31,7 +31,7 @@ LINE Notifyを使うと、色々なサービスからLINEにメッセージを�
 
 @<chap>{11NefryWiFi}を参考にして設定画面を開くと、画像の赤で囲われた部分にプログラム名が表示されます。
 
-//image[program][書き込まれているプログラム名の確認][scale=0.8]{
+//image[program][書き込まれているプログラム名の確認][scale=0.7]{
 //}
 デフォルトプログラムの場合、「Nefry BT Default Program」と表示されていますのでそれを見て確認してください。
 

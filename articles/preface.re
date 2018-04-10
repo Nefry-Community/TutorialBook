@@ -48,14 +48,18 @@ Nefryのデフォルトプログラムを使って、TwitterやLINEと連携す�
 GitHubリンク： @<href>{https://github.com/Nefry-Community/TutorialExample}
 
 インストール方法はダウンロード先に記載されているので、詳しくはそちらをご覧ください。
+
 サンプルプログラムをダウンロードしなくても、本書の内容を進めることは可能です。
 
 === NefryLibrary 1.2.1以上の場合
 ライブラリにあらかじめサンプルプログラムが含まれているので、Arduino IDE上で直接開くことができます。
 
-//image[sample][サンプルプログラムの座標][scale=0.7]{
+//image[sample][サンプルプログラムの座標][scale=0.9]{
 //}
 ファイル ＞ スケッチ例 ＞ Nefry TutorialBook Example から必要なものを選んでください。
+
+== わからないときは
+本書でわからないことがあれば、@<chap>{21NefryLink}のリンク集に記載されたコミュニティサイトにて質問してください。
 
 ===[column] Nefry BTのリビジョンによる違いについて
 
@@ -85,8 +89,7 @@ Nefry BT（無印/R1）以降の変更点を説明します。
 
 ===[/column]
 
-== わからないときは
-本書でわからないことがあれば、@<chap>{21NefryLink}のリンク集に記載されたコミュニティサイトにて質問してください。
+
 
 //footnote[arduino][イタリア生まれのハードウェアとソウトウエアをセットで簡単に触れるようにしたボード]
 //footnote[raspberry][イギリス生まれの小型PC、Linuxが動きハードウェアの制御もできるボード]
