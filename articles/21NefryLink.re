@@ -33,13 +33,13 @@ Nefryを活用した作例が検索できます。参考にして自分でも作
  * QiitaのNefryタグ（@<href>{https://qiita.com/tags/nefry}）
  * QiitaのNefry BTタグ（@<href>{https://qiita.com/tags/nefrybt}）
  * Nefryアドベントカレンダー2017@<br>{}（@<href>{https://qiita.com/advent-calendar/2017/nefry}）
- * Nefry BT 説明書@<br>{}（ @<href>{https://drive.google.com/file/d/0B_mvDQF8yaQRLVprUHl4WTFLWVE/view?usp=drivesdk}）
+ * Nefry BT 説明書@<br>{}（@<href>{https://drive.google.com/file/d/0B_mvDQF8yaQRLVprUHl4WTFLWVE/view?usp=drivesdk}）
 
 == Nefry開発情報
 Nefryライブラリの開発に関する情報を取得することができます。
 
  * NefryライブラリのGitter（@<href>{https://gitter.im/Nefry-Community/}）
- * Nefryライブラリ（ESP32向け）のGitHub（@<href>{https://github.com/Nefry-Community/arduino-esp32}）
+ * Nefryライブラリ（ESP32向け）のGitHub@<br>{}（@<href>{https://github.com/Nefry-Community/arduino-esp32}）
 
 == ユーザーのブログ紹介
 Nefryを使っていろんなものを作っているユーザブログのリンクです。
@@ -50,5 +50,5 @@ Nefryを使っていろんなものを作っているユーザブログのリン
  ** Nefry BTとGrove連携の記事を多数書かれています。
  * ゆきの野望│ゆきさん@<br>{}（@<href>{https://yuki-no-yabo.com/category/craft/nefry/}）
  ** Nefryで水やり装置を作る連載は、初心者の方の参考になると思います。他にもGoogleHomeとの連携を紹介されています。
- * 世界を変える男-やまだたろう-│やまだたろうさん@<br>{}（ @<href>{https://sekaiokaeru.com/kbe_taxonomy/nefry}）
+ * 世界を変える男-やまだたろう-│やまだたろうさん@<br>{}（@<href>{https://sekaiokaeru.com/kbe_taxonomy/nefry}）
  ** Nefryライブラリを丁寧に紹介されています。わからないところがあれば参照してみてください。
