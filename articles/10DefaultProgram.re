@@ -19,7 +19,7 @@ IFTTTを使うとプログラミングなしで多種多様な連携ができる
 === LINE Notify
 LINE Notifyを使うと、色々なサービスからLINEにメッセージを送ることができます。
 
-//image[linenotify][LINE Notify][scale=0.7]{
+//image[linenotify][LINE Notify][scale=0.8]{
 //}
 手軽に個人やグループにLINEのメッセージを送れるため、IoTとの相性もバッチリです。
 
