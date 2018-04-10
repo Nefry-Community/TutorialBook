@@ -11,15 +11,17 @@ Nefry BTにプログラムを書き込むにあたり、前の章までのArduin
 //}
 
 == プログラムの書き込み
-//image[03DefaultLed_02][次のコードに差し替えたウインドウ][scale=0.6]{
+
+//image[03DefaultLed_04][スケッチ例の操作方法][scale=0.6]{
 //}
-Nefry BTの内臓LEDを光らせるコードです。このコードはスケッチ例から呼び出すことが可能です。
+NefryLibraryのバージョンが1.2.1以上の場合、Arduino IDE のメニューからファイル ＞ スケッチ例 に移動し Nefry TutorialBook Example ＞ DefaultLed でこの章で使うプログラムを開きましょう。
 
+もし見当たらない場合、@<title>{preface} のサンプルプログラムの項目を参考にプログラムを導入してください。
 
-//image[03DefaultLed_04][スケッチ例の操作][scale=0.6]{
+//image[03DefaultLed_02][プログラムを開いたArduino IDE][scale=0.6]{
 //}
-Arduino IDE のメニューからファイル ＞ スケッチ例 に移動し Nefry TutorialBook Example ＞ DefaultLed で呼び出すことができます。
 
+Nefry BTの内臓LEDを一秒ごとに光らせるコードになります。
 
 === コードの説明
 コードの説明をします。
@@ -43,9 +45,7 @@ int red,green,blue;
 //}
 以降は、起動後に繰り返す loop 部分の動きを作っていきます。
 
-
-
-まず、Nefryでは @<code>{Nefry.setLED(R, G, B)} という関数でRGB（赤・青・緑）要素をそれぞれ指定できるので、@<code>{int red, green, blue;} でそれぞれを入れる値の箱を作ります。
+まず、NefryではLEDの色をRGB（赤・青・緑）を指定できるので、@<code>{int red, green, blue;} で変数を作ります。
 
 //emlist{
 void loop() {
@@ -58,9 +58,7 @@ void loop() {
   // フルカラーLEDの青要素をランダムに指定
   blue = random(255);
 //}
-繰り返し動作する loop の前半はrandom関数を使って、フルカラーLEDの赤・緑・青要素ををランダムに指定してカラフルに色が表示できる準備をします。
-
-このあと、フルカラーLEDの色を実際に指定するために、フルカラーLEDの赤要素なら redという名前の値の箱（変数）、変数 green ならフルカラーLEDの緑要素を、変数 blue ならフルカラーLEDの青要素を入れています。
+繰り返し動作する loop の前半はrandom関数を使って、LEDの赤・緑・青をランダムに生成してカラフルに表示できるように変数に値をいれます。
 
 //emlist{
   // LEDがランダムに点灯します
@@ -70,11 +68,12 @@ void loop() {
   Nefry.ndelay(1000);
 }
 //}
-いよいよ、繰り返し動作する loop の後半です。
+loop の後半です。
 
-先ほどの red  , green , blue を @<code>{Nefry.setLed(red,green,blue);} という記述で指示するとフルカラーLEDのカラーが変更されます。
+先ほどの ランダムに数値を入れた変数を使い。 @<code>{Nefry.setLed}関数に赤、緑。青の順番でそれぞれの値を渡すとLEDの色が変更されます。
 
-最後に @<code>{Nefry.ndelay(1000);} で1秒プログラムを待つことができるので、繰り返し動作する loop は1秒ごとに動作する仕組みで電源をOFFにするまで動きつづけます。
+最後に @<code>{Nefry.ndelay(1000);} で1秒プログラムを止めます。
+これでは1秒ごとにLEDの色を変更するプログラムが完成しました。
 
 == 確認
 実際に書き込んで確認してみましょう。
