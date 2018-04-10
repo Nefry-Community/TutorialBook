@@ -55,7 +55,7 @@ GitHubリンク： @<href>{https://github.com/Nefry-Community/TutorialExample}
 
 //image[sample][サンプルプログラムの座標][scale=0.7]{
 //}
-ファイル ＞ スケッチ例 ＞ Nefry　TutorialBook　Example から必要なものを選んでクリックしてください。
+ファイル ＞ スケッチ例 ＞ Nefry TutorialBook Example から必要なものを選んでください。
 
 ===[column] Nefry BTのリビジョンによる違いについて
 
@@ -86,9 +86,7 @@ Nefry BT（無印/R1）以降の変更点を説明します。
 ===[/column]
 
 == わからないときは
-本書でわからないことがあれば、@<chap>{21NefryLink}のコミュニティページにて質問してください。
-
-詳細は@<chap>{21NefryLink}のリンク集を参照してください。
+本書でわからないことがあれば、@<chap>{21NefryLink}のリンク集に記載されたコミュニティサイトにて質問してください。
 
 //footnote[arduino][イタリア生まれのハードウェアとソウトウエアをセットで簡単に触れるようにしたボード]
 //footnote[raspberry][イギリス生まれの小型PC、Linuxが動きハードウェアの制御もできるボード]
