@@ -33,7 +33,7 @@ USBを差し込み、@<chap>{02ArduinoSetting}を参考にして差し込まれ�
 
 == プログラムの書き込み
 
-//image[06SerialPlotter_05][スイッチを押したときに10をシリアルに送るプログラム][scale=0.6]{
+//image[06SerialPlotter_05][スイッチを押したときに10をシリアルに送るプログラム][scale=0.5]{
 //}
 このコードは、Arduino IDE のメニューからファイル ＞ スケッチ例 に移動し Nefry TutorialBook Example ＞ SerialPlotter でこの章で使うプログラムを開きましょう。
 

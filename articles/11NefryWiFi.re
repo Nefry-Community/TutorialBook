@@ -6,11 +6,11 @@ Nefry BTは2.4GHz帯の無線LANと接続することができます（5GHz帯�
 設定を始めるために、Nefry BTをPCやモバイルバッテリーなどに接続してNefry BTに給電しましょう。
 電源スイッチはなく、給電したらすぐに起動するようになっています。
 
-//image[power_supply][電源接続][scale=0.8]{
+//image[power_supply][電源接続][scale=0.7]{
 //}
 電源に接続すると、Nefry BT中央に付いているLEDが点滅して起動します（@<img>{power_supply}の青く光っている部分です）。
 
-//image[nefry_wifi][無線LANのSSIDを確認しよう][scale=0.7]{
+//image[nefry_wifi][無線LANのSSIDを確認しよう][scale=0.5]{
 //}
 起動すると、「NefryBT-OOOO」という無線LANの信号が周りに向けて発信されるので、それを設定するPC等の端末で選択し、接続します。
 

@@ -10,7 +10,7 @@
 === IFTTT
 IFTTTというWebサービスを橋渡しに、FacebookやGMail、Twitterなど、300以上のさまざまなサービスとNefry BTを連携することができます。
 
-//image[ifttt][IFTTT公式サイト][scale=0.8]{
+//image[ifttt][IFTTT公式サイト][scale=0.7]{
 //}
 IFTTTを使うとプログラミングなしで多種多様な連携ができるようになるので、今回に限らず非常にオススメのサービスです。
 
@@ -19,7 +19,7 @@ IFTTTを使うとプログラミングなしで多種多様な連携ができる
 === LINE Notify
 LINE Notifyを使うと、色々なサービスからLINEにメッセージを送ることができます。
 
-//image[linenotify][LINE Notify][scale=0.8]{
+//image[linenotify][LINE Notify][scale=0.7]{
 //}
 手軽に個人やグループにLINEのメッセージを送れるため、IoTとの相性もバッチリです。
 
