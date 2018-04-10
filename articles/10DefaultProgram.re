@@ -154,10 +154,10 @@ void loop() {
 
 ここではスイッチを押されたときに限り、IFTTTやLINE Notifyにメッセージを送信します。
 
-@<code>{if (Nefry.readSW()} の部分でスイッチが押されたかどうかの判定を行い、押された場合に条件内の次の処理へ進みます。
+@<code>{if (Nefry.readSW())} の部分でスイッチが押されたかどうかの判定を行い、押された場合に条件内の次の処理へ進みます。
 
 ==== IFTTTの処理
-@<code>{if (!SecretKey.equals("") && !Event.equals("")) )} で、IFTTTに必要なデータがDataStoreで入力されているかどうかの判定を行います。入力されている場合は、条件内のIFTTTの処理へ進みます。
+@<code>{if (!SecretKey.equals("") && !Event.equals(""))} で、IFTTTに必要なデータがDataStoreで入力されているかどうかの判定を行います。入力されている場合は、条件内のIFTTTの処理へ進みます。
 
 @<code>{if (!IFTTT.send(Event, SecretKey)) } で、IFTTTと通信結果の判定を行い、通信ができなかった場合にLEDを赤く光らせます。
 
