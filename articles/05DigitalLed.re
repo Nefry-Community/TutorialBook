@@ -104,7 +104,7 @@ void loop() {
  * Q1
  ** LEDの点滅する間隔をランダムにする
  * Q2
- ** 2つのGPIOピンを使ってLEDを2つ光らせる
+ ** A1だけでなくA0もにもLEDを加えて2つのLEDを交互に光らせる
 
 解答例は、Nefry TutorialBook Example ＞ DigitalLed Answer ＞ DigitalLed_Q1・Q2をご覧ください。
 
