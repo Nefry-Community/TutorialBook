@@ -3,29 +3,30 @@
 
 この章では、Nefry BTのGPIOを使ってLEDを点滅させる仕組みを説明します。
 
-GPIO（General Purpose Input/Output）とは、デジタル信号を出し入れする仕組みのことです。GPIOを使うことで、さまざまなセンサからデジタル信号の読み取り（入力）ができたり、Nefry BTからモーターやLEDにデジタル信号を送り（出力）動かしたり光らせたりすることができます。
-
-Nefry BTの内蔵フルカラーLEDを利用したLチカ@<fn>{lchika}は、@<chap>{03DefaultLed}を参照して試してみましょう。
-
+GPIO（General Purpose Input/Output）とは、信号を出し入れする仕組みのことです。
+GPIOを使うことで、さまざまなセンサから信号の読み取り（入力）ができたり、Nefry BTからモーターやLEDに信号を送り（出力）動かしたり光らせたりすることができます。
 
 == Nefry BTのGPIOの位置
 //image[05DigitalLED_01][Nefry BTのGPIOの位置][scale=0.8]{
 //}
 Nefry BTではGPIOを使えるGPIOピンとGroveポートが搭載されています。
 
-GPIOピンでD0とD1がありますが、その二つのピンはディスプレイの制御（I2C通信）のために使用されているため正常に動作しないことがあります（Nefry BT R2で修正しました）。
+（Nefry BT R1では、GPIOピンのD0とD1はディスプレイの制御（I2C通信）のために使用されているため正常に動作しないことがあります。（Nefry BT R2で修正しました））
 
-ですので、今回はアナログピン（A1）でGPIO制御をしてみましょう。
+今回はアナログピン（A1）でGPIO制御をしてみましょう。
 
 == Nefry BT R2に、LEDを取り付ける。
-//image[05DigitalLED_02][LEDのアソード・カソード][scale=0.8]{
+//image[05DigitalLED_02][LEDのアノード・カソード][scale=0.6]{
 //}
 電子工作で使用するこのようなLEDを使って作業を進めます。
 
-LEDの2本の配線から足の長短を確認してきましょう。足の長い方はカソードと言って+側に差し込みます。足の短い方はアノードと言って-側に差し込みます。
+LEDの2本の配線から足の長短を確認してきましょう。
+足の長い方はアノードと言って ＋側（プラス）に差し込みます。足の短い方はカソードと言って －側（マイナス）に差し込みます。
 
-//image[05DigitalLED_03][Nefry R2の場合のLEDの足の差し込み方][scale=0.8]{
+//image[05DigitalLED_03][Nefry BT R2の場合のLEDの足の差し込み方][scale=0.8]{
 //}
+@<strong>{リビジョンによってA1の場所が異なるため、ここではNefry BT R2に限って説明します。}
+
 Nefry BT R2 のA1ピンソケットにLEDの足の長い方を、隣のGNDピンソケットに足の短い方をとりつけます。
 
 //image[05DigitalLED_04][Nefry BT R2 に差し込んだ状態][scale=0.8]{
@@ -35,11 +36,11 @@ Nefry BT R2 に差し込んだ状態です。これでLEDの準備は完了で�
 Nefry BTのリビジョンによってはA1ピンソケットの刻印位置が違うかもしれませんが、刻印にしたがってとりつけてください。
 
 == プログラムの書き込み
-次のコードでLEDが1秒ごと点滅します。
 
-//image[05DigitalLED_05][プログラム][scale=0.6]{
+
+//image[05DigitalLED_05][1秒ごとにLEDを点滅させるプログラム][scale=0.6]{
 //}
-このコードは、Arduino IDE のメニューからファイル ＞ スケッチ例 に移動し Nefry TutorialBook Example ＞ DigitalLed で呼び出すことができます。
+このコードは、Arduino IDE のメニューからファイル ＞ スケッチ例 に移動し Nefry TutorialBook Example ＞ DigitalLed でこの章で使うプログラムを開きましょう。
 
 === コードの説明
 
@@ -92,7 +93,7 @@ void loop() {
 == 確認
 実際に書き込んで確認してみましょう。
 
-//image[05DigitalLED_06][LEDが点滅する流れ][scale=0.8]{
+//image[05DigitalLED_06][LEDが点滅する流れ][scale=0.7]{
 //}
 無事にプログラム書き込みが終わると、先ほどつなげたLEDが点滅します。
 
