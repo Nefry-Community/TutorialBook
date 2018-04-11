@@ -15,9 +15,9 @@
 このSWと刻印されたスイッチ（以下「SWスイッチ」）の反応をプログラムで分かるようにして、SWスイッチを押すと内蔵フルカラーLEDのカラーが変化するようにします。
 
 == プログラムの書き込み
-//image[04DefaultSW_02][次のコードに差し替えたウインドウ][scale=0.6]{
+//image[04DefaultSW_02][スイッチを押したら赤く光るプログラム][scale=0.6]{
 //}
-このコードは、Arduino IDE のメニューからファイル ＞ スケッチ例 に移動し Nefry TutorialBook Example ＞ DefaultSW で呼び出すことができます。
+このコードは、Arduino IDE のメニューからファイル ＞ スケッチ例 に移動し Nefry TutorialBook Example ＞ DefaultSW でこの章で使うプログラムを開きましょう。
 
 === コードの説明
 
@@ -53,7 +53,7 @@ void loop() {
 @<code>{Nefry.readSW()} でSWスイッチの状態を取得することができます。
 
 @<strong>{ボタンを押したあとに離したタイミング} で @<code>{Nefry.readSW()} が1を返すので「ボタンを押した」と判定できます。
- @<code>{if(Nefry.readSW() == 1)}となりますが、プログラム内では1になること（true, falseのうちtrueなこと）を省略できるので @<code>{if(Nefry.readSW())} で判定することができます。
+ @<code>{if(Nefry.readSW() == true)}となりますが、if文ではtrueとの比較を省略できるので @<code>{if(Nefry.readSW())} で判定することができます。
 
 そのときに、 @<code>{Nefry.setLed(255, 0, 0);} LEDが赤に光らせ、 @<code>{Nefry.ndelay(1000);} で1秒続いたあと、 @<code>{Nefry.setLed(0, 0, 255);} 青に戻します。
 

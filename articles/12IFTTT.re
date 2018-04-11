@@ -128,7 +128,11 @@ Webhooksのページに移動します（初回は認証画面が表示される
 
 //image[ifttt_setup2][保存][scale=0.6]{
 //}
-先ほど取得したWebhooksの「Secret Key」と「Event Name」をそれぞれ入力し保存します。
+先ほど取得したWebhooksの「Secret Key」と「Event Name」をそれぞれ入力を終えたら「Save」を選択して保存します。
+
+データを保存するためにNefryが再起動します。
+
+再起動が終れば、設定は完了です。
 
 //image[nefry_ifttt][実行してみよう][scale=0.8]{
 //}

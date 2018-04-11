@@ -50,7 +50,7 @@ Arduino IDEでプログラムを書いたあと、@<tt>{ファイル} > @<tt>{�
 @<tt>{スケッチ} > @<tt>{コンパイルしたバイナリを出力} を選択すると、先ほど保存した場所に.binファイルが作成されます。
 
 === Nefryコンソールを開く
-//image[image4][設定画面][scale=0.8]{
+//image[image4][設定画面][scale=0.7]{
 //}
 @<chap>{11NefryWiFi}を参考に、NefryのWebコンソールを開きます。「Upload Sketch」を選択します。
 

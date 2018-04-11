@@ -92,7 +92,7 @@ Firebase（@<href>{https://firebase.google.com/?hl=ja}）は、モバイルと�
 //image[firebase_top][Firebaseのホームページ][scale=0.7]{
 //}
 
-Firebaseライブラリは、@<code>{NefryFireBase.h}をincludeすることで使えるようになります
+Firebaseライブラリは、@<code>{NefryFireBase.h}をincludeすることで使えるようになります。
 
 @<code>{begin} 関数で、ホスト名とシークレットキーを設定します。
 
@@ -118,11 +118,11 @@ Firebaseのページ上でリアルタイムデータベースを作成すると
 === 簡単な使い方
 //image[display1][サンプルコード（NefryLibrary/display1）の例][scale=0.8]{
 //}
-例えば、@<code>{NefryDisplay#print} 関数を使うと、簡単にディスプレイに好きな文字列を表示することができます。
+例えば、@<code>{NefryDisplay.print} 関数を使うと、簡単にディスプレイに好きな文字列を表示することができます。
 
 //image[display2][サンプルコード（NefryLibrary/display2）の例][scale=0.8]{
 //}
-もし@<code>{NefryDisplay#print} 関数に、ディスプレイの横幅より長い文字列を入力しても、自動でスクロール表示してくれます。
+もし@<code>{NefryDisplay.print} 関数に、ディスプレイの横幅より長い文字列を入力しても、自動でスクロール表示してくれます。
 
 //image[display3][サンプルコード（NefryLibrary/display3）の例][scale=0.8]{
 //}
@@ -130,24 +130,24 @@ Firebaseのページ上でリアルタイムデータベースを作成すると
 
 たとえば、「P」「O」「K」「I」「O」と表示しようとしたときは、最後の3行である @<strong>{「K」「I」「O」} だけが表示されます。
 
-このように、@<code>{NefryDisplay#print} 関数は非常に便利な関数です。実行中のプログラムのログを表示したり、表示したい文字列が3行より少ない場合にオススメです。
+このように、@<code>{NefryDisplay.print} 関数は非常に便利な関数です。実行中のプログラムのログを表示したり、表示したい文字列が3行より少ない場合にオススメです。
 
 === 高度な使い方
-もう少し、凝った表示をしたいときは、@<code>{NefryDisplay#autoScrollFunc} 関数で表示したい要素を記述した関数を渡す方法があります。
+もう少し、凝った表示をしたいときは、@<code>{NefryDisplay.autoScrollFunc} 関数で表示したい要素を記述した関数を渡す方法があります。
 
-例えば、好きな位置に文字列を表示させたいときは、@<code>{NefryDisplay#drawString} 関数を使って関数を記述し、その関数を@<code>{NefryDisplay#autoScrollFunc} 関数に渡します。
+例えば、好きな位置に文字列を表示させたいときは、@<code>{NefryDisplay.drawString} 関数を使って関数を記述し、その関数を@<code>{NefryDisplay.autoScrollFunc} 関数に渡します。
 
 //image[display4][サンプルコード（NefryLibrary/display4）の例][scale=0.8]{
 //}
 
 このように、「POKIO」という文字を好きな位置に配置できました。
 
-@<code>{NefryDisplay#autoScrollFunc} 関数を使う場合は@<tt>{Nefry PrintDialog}という固定で表示される文字列もないので、ディスプレイ全体をフルに使うことができます。
+@<code>{NefryDisplay.autoScrollFunc} 関数を使う場合は@<tt>{Nefry PrintDialog}という固定で表示される文字列もないので、ディスプレイ全体をフルに使うことができます。
 
 もちろん、文字列以外にも図形を表示できます。
 
 //image[display5][サンプルコード（NefryLibrary/display5）の例][scale=0.8]{
 //}
-@<code>{NefryDisplay#drawString} 関数の代わりに、@<code>{NefryDisplay#drawCircle} 関数や@<code>{NefryDisplay#drawHorizontalLine} 関数などを使って図形を描くことができます。
+@<code>{NefryDisplay.drawString} 関数の代わりに、@<code>{NefryDisplay.drawCircle} 関数や@<code>{NefryDisplay.drawHorizontalLine} 関数などを使って図形を描くことができます。
 
 このように、少し凝った表示も簡単に実装することができます。
