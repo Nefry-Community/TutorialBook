@@ -30,7 +30,8 @@ Windows用、macOS用、Linux用が用意されています。Linux用にはARM�
 macOS向けのダウンロードリンクを選択した場合は、ダウンロードしたZIPファイルを解凍してアプリケーションフォルダに移動するだけでインストールが完了します。
 
 === Windows向けのインストール方法
-Windowsの場合、インストーラ、ZIPファイル、Windows Storeからダウンロードする方法を選択できます。
+Windowsの場合、インストーラ、ZIPファイル、Windows Storeの3パターン、インストールする方法があります。
+この本ではインストーラからインストールする方法を紹介します。
 
 ==== インストーラを利用する場合
 //image[arduino_ide_win_installer][Windows向けのインストーラ（EULA画面）][scale=0.6]{
@@ -40,17 +41,6 @@ Windowsの場合、インストーラ、ZIPファイル、Windows Storeからダ
 //image[arduino_ide_win_installer2][Windows向けのインストーラ（オプション画面）][scale=0.6]{
 //}
 次の画面でインストールオプションを選択できる画面に遷移しますが、特に問題がなければ@<tt>{Next}をクリックしてインストールを開始させます。次の画面でインストールの進捗が表示され、@<tt>{Completed}と表示されたらインストール完了です。
-
-==== ZIPファイルを利用する場合
-//image[arduino_ide_win_zip][Windows向けのIDEのZIPファイルを解凍][scale=0.6]{
-//}
-ZIPファイルをダウンロードした場合、ダウンロード後にZIPを解凍すると上記のようなファイル群が展開されます。この中の@<tt>{arduino.exe}をダブルクリックするとArduino IDEを起動することができます。
-
-==== Windowsストアを利用する場合
-//image[arduino_ide_win_app_store][WindowsストアからArduino IDEをインストールする][scale=0.6]{
-//}
-Windows 8.1や10をお使いであれば、Windowsストアからインストールすることができます。
-
 
 === 起動してみる
 //image[arduino_ide_main][Arduino IDE メイン画面][scale=0.6]{
